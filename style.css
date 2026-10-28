@@ -273,6 +273,16 @@ b, strong {
     text-transform: uppercase;
 }
 
+.section-title b,
+.section-title strong,
+.bio-heading b,
+.bio-heading strong {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    letter-spacing: inherit;
+}
+
 .section-title::after,
 .bio-heading::after {
     content: "";
