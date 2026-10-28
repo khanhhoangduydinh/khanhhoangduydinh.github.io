@@ -168,6 +168,7 @@
 
     function initPubBadges() {
         $$('.pub-item-modern[data-type]').forEach((item) => {
+            if (item.querySelector('.pub-badge')) return;
             const label = PUB_BADGES[item.dataset.type];
             const content = $('.pub-content-box', item);
             if (!label || !content) return;
