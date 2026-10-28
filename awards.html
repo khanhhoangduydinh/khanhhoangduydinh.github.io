@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoang Duy Khanh Dinh's Homepage</title>
-        <meta property="og:title" content="Hoang Duy Khanh Dinh">
+    <meta property="og:title" content="Hoang Duy Khanh Dinh">
     <meta property="og:site_name" content="Hoang Duy Khanh Dinh's Homepage">
     <meta property="og:type" content="website">
     <script type="application/ld+json">
@@ -15,296 +15,286 @@
       "url" : "https://khanhhoangduydinh.github.io/khanhhoangduydinh-website/"
     }
     </script>
-    
+
     <meta name="google-site-verification" content="ZDkmX-LsKsqk2h9xInR3OyR_mqe6OgUbbP7GpZX4Vbw" />
-    
+
+    <!-- Apply saved (or system) theme before first paint to avoid a flash -->
+    <script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('theme');}catch(e){}if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}d.setAttribute('data-theme',t);d.classList.add('js');})();</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
     <link rel="icon" href="Images/avatar.jpg" type="image/jpeg">
+    <script src="main.js?v=2" defer></script>
 </head>
 <body>
 
-    <div class="wrapper">
-
-        <header class="sidebar">
-            <div class="sidebar-avatar">
+    <header class="site-header">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">
                 <img src="Images/avatar.jpg" alt="Avatar">
-            </div>
-            <div class="site-title">
-                <a href="index.html">HOANG DUY KHANH, DINH</a>
-            </div>
-            <nav class="nav-menu">
+                <span>HOANG DUY KHANH, DINH</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="cv.html">CV</a></li>
                     <li><a href="research.html">RESEARCH</a></li>
                     <li><a href="publications.html">PUBLICATIONS</a></li>
                     <li><a href="teaching.html">TEACHING</a></li>
-                    <li><a href="awards.html" class="active-menu">HONORS & AWARDS</a></li>
+                    <li><a href="awards.html" class="active-menu" aria-current="page">HONORS &amp; AWARDS</a></li>
                     <li><a href="gallery.html">GALLERY</a></li>
                     <li><a href="miscellaneous.html">MISCELLANEOUS</a></li>
                 </ul>
             </nav>
-            <div class="sidebar-footer">
-                <p>&copy; KDHD2026</p>
+            <div class="nav-actions">
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><i class="fa-solid fa-bars"></i></button>
             </div>
-        </header>
+        </div>
+        <div class="progress-bar" id="progress-bar"></div>
+    </header>
 
-        <main class="content">
-            <section class="section">
-                <h2 class="section-title">HONORS & AWARDS</h2>
+    <main class="content">
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-award title-icon"></i>HONORS &amp; AWARDS</h2>
 
-                <div class="awards-layout">
+            <div class="awards-layout">
+                <div class="awards-list" id="awards-list-auto" data-autonumber>
 
-                    <div class="awards-list" id="awards-list-auto">
-                        
-                        <div class="award-item">
-                            <div class="award-number-box"></div> <div class="award-content-box">
-                                <h3 class="award-title">“Student with 5 good criteria 2025” title - National level & City level & University level</h3>
-                                <p class="award-desc">
-                                    Central Committee of Viet Nam National Union of Students
-                                </p>
-                                <p class="award-date">December 2025</p>
-                            </div>
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">“Student with 5 good criteria 2025” title - National level &amp; City level &amp; University level</h3>
+                            <p class="award-desc">
+                                Central Committee of Viet Nam National Union of Students
+                            </p>
+                            <span class="award-date">December 2025</span>
                         </div>
-                        
-                        <div class="award-item">
-                            <div class="award-number-box"></div>
-                            <div class="award-content-box">
-                                <h3 class="award-title">Outstanding achievements were made in participating in the Green Summer Volunteer Campaign in Dong Thap province in 2025</h3>
-                                <p class="award-desc">
-                                    Executive Committee of Dong Thap Province Ho Chi Minh Communist Youth Union
-                                </p>
-                                <p class="award-date">June 2025</p>
-                            </div>
-                        </div>
-                        
-                        <div class="award-item">
-                            <div class="award-number-box"></div>
-                            <div class="award-content-box">
-                                <h3 class="award-title">"Advanced youth follow President Ho Chi Minh’s wills 2025” title</h3>
-                                <p class="award-desc">
-                                    Ho Chi Minh City University of Technology - Vietnam National University
-                                </p>
-                                <p class="award-date">May 2025</p>
-                            </div>
-                        </div>
+                    </div>
 
-                        <div class="award-item">
-                            <div class="award-number-box"></div>
-                            <div class="award-content-box">
-                                <h3 class="award-title">Achieved outstanding results in the exam support activities at the first phase of the 2025 Vietnam National University Ho Chi Minh City – Academic Competency Test</h3>
-                                <p class="award-desc">
-                                    Executive Committee of Ho Chi Minh City University of Technology Ho Chi Minh Communist Youth Union
-                                </p>
-                                <p class="award-date">April 2025</p>
-                            </div>
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Outstanding achievements were made in participating in the Green Summer Volunteer Campaign in Dong Thap province in 2025</h3>
+                            <p class="award-desc">
+                                Executive Committee of Dong Thap Province Ho Chi Minh Communist Youth Union
+                            </p>
+                            <span class="award-date">June 2025</span>
                         </div>
+                    </div>
 
-                        <div class="award-item">
-                            <div class="award-number-box"></div>
-                            <div class="award-content-box">
-                                <h3 class="award-title">OISP Talented Students 2023-2024</h3>
-                                <p class="award-desc">
-                                    Office for International Study Programs - HCMC University of Technology - Vietnam National University Ho Chi Minh City
-                                </p>
-                                <p class="award-date">March 2025</p>
-                            </div>
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">"Advanced youth follow President Ho Chi Minh’s wills 2025” title</h3>
+                            <p class="award-desc">
+                                Ho Chi Minh City University of Technology - Vietnam National University
+                            </p>
+                            <span class="award-date">May 2025</span>
                         </div>
+                    </div>
 
-                        <div class="award-item">
-                            <div class="award-number-box"></div>
-                            <div class="award-content-box">
-                                <h3 class="award-title">Students with 5 good criteria 2024” title - Viet Nam Union of Students of OISP level</h3>
-                                <p class="award-desc">
-                                    Office for International Study Programs - HCMC University of Technology - Vietnam National University Ho Chi Minh City
-                                </p>
-                                <p class="award-date">March 2025</p>
-                            </div>
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Achieved outstanding results in the exam support activities at the first phase of the 2025 Vietnam National University Ho Chi Minh City – Academic Competency Test</h3>
+                            <p class="award-desc">
+                                Executive Committee of Ho Chi Minh City University of Technology Ho Chi Minh Communist Youth Union
+                            </p>
+                            <span class="award-date">April 2025</span>
                         </div>
+                    </div>
 
-                        <div class="award-item">
-                            <div class="award-number-box"></div>
-                            <div class="award-content-box">
-                                <h3 class="award-title">“Advanced youth follow President Ho Chi Minh’s wills 2024” title</h3>
-                                <p class="award-desc">
-                                    HCMC University of Technology - Vietnam National University Ho Chi Minh City
-                                </p>
-                                <p class="award-date">January 2025</p>
-                            </div>
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">OISP Talented Students 2023-2024</h3>
+                            <p class="award-desc">
+                                Office for International Study Programs - HCMC University of Technology - Vietnam National University Ho Chi Minh City
+                            </p>
+                            <span class="award-date">March 2025</span>
                         </div>
+                    </div>
 
-                        <div class="award-item">
-                            <div class="award-number-box"></div>
-                            <div class="award-content-box">
-                                <h3 class="award-title">Encouragement Award in the “Young Innovators’ Bridge” Competition 2021</h3>
-                                <p class="award-desc">
-                                    Executive Committee of Dong Nai Provincial Ho Chi Minh Communist Youth Union
-                                </p>
-                                <p class="award-date">November 2021</p>
-                            </div>
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Students with 5 good criteria 2024” title - Viet Nam Union of Students of OISP level</h3>
+                            <p class="award-desc">
+                                Office for International Study Programs - HCMC University of Technology - Vietnam National University Ho Chi Minh City
+                            </p>
+                            <span class="award-date">March 2025</span>
                         </div>
+                    </div>
 
-                        <div class="award-item">
-                            <div class="award-number-box"></div>
-                            <div class="award-content-box">
-                                <h3 class="award-title">“Student with 3 Good Criteria 2021” title - Provincial level</h3>
-                                <p class="award-desc">
-                                    Executive Committee of Dong Nai Provincial Ho Chi Minh Communist Youth Union
-                                </p>
-                                <p class="award-date">October 2021</p>
-                            </div>
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">“Advanced youth follow President Ho Chi Minh’s wills 2024” title</h3>
+                            <p class="award-desc">
+                                HCMC University of Technology - Vietnam National University Ho Chi Minh City
+                            </p>
+                            <span class="award-date">January 2025</span>
                         </div>
+                    </div>
 
-                        <div class="award-item">
-                            <div class="award-number-box"></div>
-                            <div class="award-content-box">
-                                <h3 class="award-title">Fourth Prize of Provincial Science and Engineering Fair Competition 2020-2021</h3>
-                                <p class="award-desc">
-                                    Dong Nai Provincial Science and Engineering Fair Competition
-                                </p>
-                                <p class="award-date">January 2021</p>
-                            </div>
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Encouragement Award in the “Young Innovators’ Bridge” Competition 2021</h3>
+                            <p class="award-desc">
+                                Executive Committee of Dong Nai Provincial Ho Chi Minh Communist Youth Union
+                            </p>
+                            <span class="award-date">November 2021</span>
                         </div>
-                     </div>
-            </section>
+                    </div>
 
-            <section class="section">
-                <h2 class="section-title">CERTIFICATIONS</h2>
-
-                <div class="awards-layout">
-
-                    <div class="awards-list" id="certi-list-auto">
-                        
-                        <div class="award-item">
-                            <div class="award-number-box"></div> <div class="award-content-box">
-                                <h3 class="award-title">Certification of participated in the Winter School on Quantum Computing from November 21-23, 2025 at the University of Technology - Vietnam National University Ho Chi Minh City</h3>
-                                <p class="award-desc">
-                                    Vietnam Institute for Advanced Study in Mathematics (VIASM)
-                                </p>
-                                <p class="award-date">23/11/2025</p>
-                            </div>
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">“Student with 3 Good Criteria 2021” title - Provincial level</h3>
+                            <p class="award-desc">
+                                Executive Committee of Dong Nai Provincial Ho Chi Minh Communist Youth Union
+                            </p>
+                            <span class="award-date">October 2021</span>
                         </div>
+                    </div>
 
-                        <div class="award-item">
-                            <div class="award-number-box"></div> <div class="award-content-box">
-                                <h3 class="award-title">Certification of Top 40 Bach Khoa Innovation 2025</h3>
-                                <p class="award-desc">
-                                    HCMC University of Technology - Viet Nam National University Ho Chi Minh City
-                                </p>
-                                <p class="award-date">19/09/2025</p>
-                            </div>
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Fourth Prize of Provincial Science and Engineering Fair Competition 2020-2021</h3>
+                            <p class="award-desc">
+                                Dong Nai Provincial Science and Engineering Fair Competition
+                            </p>
+                            <span class="award-date">January 2021</span>
                         </div>
-
-                        <div class="award-item">
-                            <div class="award-number-box"></div> <div class="award-content-box">
-                                <h3 class="award-title">Certification of actively participated in the Southeast Asian Culture Knowledge Contest - ASEAN</h3>
-                                <p class="award-desc">
-                                    HCMC University of Technology - Viet Nam National University Ho Chi Minh City
-                                </p>
-                                <p class="award-date">24/03/2025</p>
-                            </div>
-                        </div>
-
-                        <div class="award-item">
-                            <div class="award-number-box"></div> <div class="award-content-box">
-                                <h3 class="award-title">Certification of Won third prize in the TOFAS 2024 programming competition - Amateur group</h3>
-                                <p class="award-desc">
-                                    HCMC University of Technology - Viet Nam National University Ho Chi Minh City
-                                </p>
-                                <p class="award-date">23/11/2024</p>
-                            </div>
-                        </div>
-
-                        <div class="award-item">
-                            <div class="award-number-box"></div> <div class="award-content-box">
-                                <h3 class="award-title">Certification of The Potential Project of IU Startup Demo Day 2024</h3>
-                                <p class="award-desc">
-                                    International University - Viet Nam National University Ho Chi Minh City
-                                </p>
-                                <p class="award-date">05/2024</p>
-                            </div>
-                        </div>
-
-                        <div class="award-item">
-                            <div class="award-number-box"></div> <div class="award-content-box">
-                                <h3 class="award-title">Certification of successfully completing the Science and Technology Track - Biotechnology</h3>
-                                <p class="award-desc">
-                                    U.S. Department of State’s Bureau of East Asian and Pacific Affairs and implemented by Arizona State University
-                                </p>
-                                <p class="award-date">11/04/2024</p>
-                            </div>
-                        </div>
-
-                        <div class="award-item">
-                            <div class="award-number-box"></div> <div class="award-content-box">
-                                <h3 class="award-title">Certification of have completed the CV Writing and Job Interview Skills course which took place on April 3-4, 2025</h3>
-                                <p class="award-desc">
-                                    HCMC University of Technology - Viet Nam National University Ho Chi Minh City
-                                </p>
-                                <p class="award-date">11/04/2024</p>
-                            </div>
-                        </div>
-
-                        <div class="award-item">
-                            <div class="award-number-box"></div> <div class="award-content-box">
-                                <h3 class="award-title">Certification of completion the Online Continuing Professional Development Program: The 33rd Online Continuing Professional Development Platform for Asian Radiologic 
-                                    Technologist’s Societies and The 34th Continuing Professional Development (CPD) Program of Macao Radiological Technologists’ Association</h3>
-                                <p class="award-desc">
-                                    Macao Radiological Technologists’ Association
-                                </p>
-                                <p class="award-date">24/01/2024</p>
-                            </div>
-                        </div>
-
-                        <div class="award-item">
-                            <div class="award-number-box"></div> <div class="award-content-box">
-                                <h3 class="award-title">Certification of successfully completed the courses of 2022 Holiday School-Introduction to Biomedical Mechanics from June 20, 2022 to June 27, 2022</h3>
-                                <p class="award-desc">
-                                    Department of Biomedical Engineering, National Cheng Kung University
-                                </p>
-                                <p class="award-date">29/06/2022</p>
-                            </div>
-                        </div>
-                         </div> 
+                    </div>
                 </div>
-            </section>
-            <div style="margin-top: 60px; margin-bottom: 20px;">
-                <p class="caption">I just believe victory came to me along the path I was destined to walk</p>
-                <p class="caption caption-divider">- Lee "Faker" Sang-hyeok (T1 League of Legends) -</p>
             </div>
-        </main>
-    </div>
+        </section>
 
-    <script>
-    // Hàm dùng chung để đánh số thứ tự cho bất kỳ danh sách nào
-    function autoNumberList(containerId) {
-        const container = document.getElementById(containerId);
-        
-        if (container) {
-            const items = container.querySelectorAll('.award-item');
-            
-            items.forEach((item, index) => {
-                const number = index + 1; // Đếm xuôi 1, 2, 3...
-                
-                const numberBox = item.querySelector('.award-number-box');
-                if (numberBox) {
-                    numberBox.textContent = `${number}.`;
-                }
-            });
-        }
-    }
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-certificate title-icon"></i>CERTIFICATIONS</h2>
 
-    // Gọi hàm chạy cho mục Awards
-    autoNumberList('awards-list-auto');
+            <div class="awards-layout">
+                <div class="awards-list" id="certi-list-auto" data-autonumber>
 
-    // Gọi hàm chạy cho mục Certifications (ID mới vừa đổi)
-    autoNumberList('certi-list-auto');
-    </script>
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Certification of participated in the Winter School on Quantum Computing from November 21-23, 2025 at the University of Technology - Vietnam National University Ho Chi Minh City</h3>
+                            <p class="award-desc">
+                                Vietnam Institute for Advanced Study in Mathematics (VIASM)
+                            </p>
+                            <span class="award-date">23/11/2025</span>
+                        </div>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Certification of Top 40 Bach Khoa Innovation 2025</h3>
+                            <p class="award-desc">
+                                HCMC University of Technology - Viet Nam National University Ho Chi Minh City
+                            </p>
+                            <span class="award-date">19/09/2025</span>
+                        </div>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Certification of actively participated in the Southeast Asian Culture Knowledge Contest - ASEAN</h3>
+                            <p class="award-desc">
+                                HCMC University of Technology - Viet Nam National University Ho Chi Minh City
+                            </p>
+                            <span class="award-date">24/03/2025</span>
+                        </div>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Certification of Won third prize in the TOFAS 2024 programming competition - Amateur group</h3>
+                            <p class="award-desc">
+                                HCMC University of Technology - Viet Nam National University Ho Chi Minh City
+                            </p>
+                            <span class="award-date">23/11/2024</span>
+                        </div>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Certification of The Potential Project of IU Startup Demo Day 2024</h3>
+                            <p class="award-desc">
+                                International University - Viet Nam National University Ho Chi Minh City
+                            </p>
+                            <span class="award-date">05/2024</span>
+                        </div>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Certification of successfully completing the Science and Technology Track - Biotechnology</h3>
+                            <p class="award-desc">
+                                U.S. Department of State’s Bureau of East Asian and Pacific Affairs and implemented by Arizona State University
+                            </p>
+                            <span class="award-date">11/04/2024</span>
+                        </div>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Certification of have completed the CV Writing and Job Interview Skills course which took place on April 3-4, 2025</h3>
+                            <p class="award-desc">
+                                HCMC University of Technology - Viet Nam National University Ho Chi Minh City
+                            </p>
+                            <span class="award-date">11/04/2024</span>
+                        </div>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Certification of completion the Online Continuing Professional Development Program: The 33rd Online Continuing Professional Development Platform for Asian Radiologic Technologist’s Societies and The 34th Continuing Professional Development (CPD) Program of Macao Radiological Technologists’ Association</h3>
+                            <p class="award-desc">
+                                Macao Radiological Technologists’ Association
+                            </p>
+                            <span class="award-date">24/01/2024</span>
+                        </div>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-number-box"></div>
+                        <div class="award-content-box">
+                            <h3 class="award-title">Certification of successfully completed the courses of 2022 Holiday School-Introduction to Biomedical Mechanics from June 20, 2022 to June 27, 2022</h3>
+                            <p class="award-desc">
+                                Department of Biomedical Engineering, National Cheng Kung University
+                            </p>
+                            <span class="award-date">29/06/2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-quote">
+            <p class="caption">I just believe victory came to me along the path I was destined to walk</p>
+            <p class="caption caption-divider">- Lee "Faker" Sang-hyeok (T1 League of Legends) -</p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; KDHD2026</p>
+        </div>
+    </footer>
+
 </body>
 </html>
-
-
-
-
-

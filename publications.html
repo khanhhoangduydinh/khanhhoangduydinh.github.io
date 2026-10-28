@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoang Duy Khanh Dinh's Homepage</title>
-        <meta property="og:title" content="Hoang Duy Khanh Dinh">
+    <meta property="og:title" content="Hoang Duy Khanh Dinh">
     <meta property="og:site_name" content="Hoang Duy Khanh Dinh's Homepage">
     <meta property="og:type" content="website">
     <script type="application/ld+json">
@@ -18,443 +18,436 @@
 
     <link rel="icon" href="Images/avatar.jpg" type="image/jpeg">
     <meta name="google-site-verification" content="ZDkmX-LsKsqk2h9xInR3OyR_mqe6OgUbbP7GpZX4Vbw" />
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
 
+    <!-- Apply saved (or system) theme before first paint to avoid a flash -->
+    <script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('theme');}catch(e){}if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}d.setAttribute('data-theme',t);d.classList.add('js');})();</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=2">
+    <script src="main.js?v=2" defer></script>
 </head>
 <body>
 
-    <div class="wrapper">
-
-        <header class="sidebar">
-            <div class="sidebar-avatar">
+    <header class="site-header">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">
                 <img src="Images/avatar.jpg" alt="Avatar">
-            </div>
-            <div class="site-title">
-                <a href="index.html">HOANG DUY KHANH, DINH</a>
-            </div>
-            
-            <nav class="nav-menu">
+                <span>HOANG DUY KHANH, DINH</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="cv.html">CV</a></li>
                     <li><a href="research.html">RESEARCH</a></li>
-                    <li><a href="publications.html" class="active-menu">PUBLICATIONS</a></li>
+                    <li><a href="publications.html" class="active-menu" aria-current="page">PUBLICATIONS</a></li>
                     <li><a href="teaching.html">TEACHING</a></li>
-                    <li><a href="awards.html">HONORS & AWARDS</a></li>
+                    <li><a href="awards.html">HONORS &amp; AWARDS</a></li>
                     <li><a href="gallery.html">GALLERY</a></li>
                     <li><a href="miscellaneous.html">MISCELLANEOUS</a></li>
                 </ul>
             </nav>
-
-            <div class="sidebar-footer">
-                <p>&copy; Khanh's personal site. All rights reserved. All opinions, findings, conclusions and recommendations expressed on this site are personal views, and do not reflect the views of any employer or funder.</p>
+            <div class="nav-actions">
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><i class="fa-solid fa-bars"></i></button>
             </div>
-        </header>
+        </div>
+        <div class="progress-bar" id="progress-bar"></div>
+    </header>
 
-        <main class="content">
-            <section class="section">
-                <h2 class="section-title">COMPETITIONS</h2>
-            
-                <div id="competition-list">
-            
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                                <a href="Documents/Eureka_2025.pdf" target="_blank">Secure Brain-Computer Interfaces with Homomorphic Encryption: A Case Study on Electroencephalogram Based P300 Classification</a>
-                            </h3>
-                            <div class="pub-authors">
-                                The Hoang Nguyen, <b>Duy Khanh Dinh Hoang</b>
-                            </div>
-                            <div class="pub-authors">
-                                Mentor: Dr. Thanh Cong Nguyen
-                            </div>
-                            <div class="pub-venue">
-                                <i>25th Euréka Student Scientific Research Prize 2025 (Semi-final Round) - Ho Chi Minh City, Vietnam (06/2025 - 11/2025)</i>
-                            </div> 
-                        </div>
-                    </div>
+    <main class="content">
 
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                                MEMORY: A mobile application to support memory improvement for Alzheimer’s Patients
-                            </h3>
-                            <div class="pub-authors">
-                                <b>Duy Khanh Dinh Hoang</b>, Gia Khang Trinh, Quoc Thai Hoang, Le Vy Doan, Ngoc Nhon Huynh, My Quyen Do
-                            </div>
-                            <div class="pub-authors">
-                                Mentors: Assoc. Prof. Thanh Nha Nguyen, M.E. Hai Thanh Hoang Le, MSc. Thu Suong Nguyen Thi, MSc. Nhat Le Tran Thi, Dr. Vinh Khang Nguyen
-                            </div>
-                            <div class="pub-venue">
-                                <i>Bach Khoa Innovation 2025 (Semi-final Round) - Ho Chi Minh City, Vietnam (04/2025 - 08/2025)</i>
-                            </div>            
-                        </div>
-                    </div>
-                    
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                                TSHT: Terahertz Sensing and Healing Technology
-                            </h3>
-                            <div class="pub-authors">
-                                Manh Huy Tran, <b>Duy Khanh Dinh Hoang</b>, Minh Kha Truong, Duc Minh Tran
-                            </div>
-                            <div class="pub-authors">
-                                Mentors: Assoc. Prof. Chan Khon Huynh
-                            </div>
-                            <div class="pub-venue">
-                                <i>IU Startup Demo Day 2024 (Top 8 Grand-final Round) - Ho Chi Minh City, Vietnam (02/2024 - 05/2024)</i>
-                            </div>            
-                        </div>
-                    </div>
+        <div class="pub-toolbar" id="pub-toolbar">
+            <div class="filter-chips" role="group" aria-label="Filter by type">
+                <button class="chip is-active" data-filter="all" aria-pressed="true">All</button>
+                <button class="chip" data-filter="journal" aria-pressed="false">Journals</button>
+                <button class="chip" data-filter="conference" aria-pressed="false">Conferences</button>
+                <button class="chip" data-filter="submission" aria-pressed="false">In submission</button>
+                <button class="chip" data-filter="competition" aria-pressed="false">Competitions</button>
+            </div>
+            <label class="pub-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" id="pub-search" placeholder="Search title, author, venue..." aria-label="Search publications">
+            </label>
+        </div>
+        <p class="pub-empty" id="pub-empty" hidden>No matching items.</p>
 
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                                Identification and Classification of Multi-label Brain Tumors using MATLAB Software integrated with Graphical User Interface based on Convolutional Neural Network and Deep Learning Algorithms
-                            </h3>
-                            <div class="pub-authors">
-                                <b>Duy Khanh Dinh Hoang</b>, Gia Huy Huynh Tran, Viet Khiem Pham, Minh Khoi Nguyen
-                            </div>
-                            <div class="pub-authors">
-                                Mentors: Dr. Quoc Khai Le
-                            </div>
-                            <div class="pub-venue">
-                                <i>BME Innovation 2024 (Semi-final Round) - Ho Chi Minh City, Vietnam (11/2023 - 01/2024)</i>
-                            </div>            
+        <section class="section pub-section">
+            <h2 class="section-title"><i class="fa-solid fa-trophy title-icon"></i>COMPETITIONS</h2>
+
+            <div id="competition-list" data-autonumber>
+
+                <div class="pub-item-modern" data-type="competition">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            <a href="Documents/Eureka_2025.pdf" target="_blank">Secure Brain-Computer Interfaces with Homomorphic Encryption: A Case Study on Electroencephalogram Based P300 Classification</a>
+                        </h3>
+                        <div class="pub-authors">
+                            The Hoang Nguyen, <b>Duy Khanh Dinh Hoang</b>
+                        </div>
+                        <div class="pub-authors">
+                            Mentor: Dr. Thanh Cong Nguyen
+                        </div>
+                        <div class="pub-venue">
+                            <i>25th Euréka Student Scientific Research Prize 2025 (Semi-final Round) - Ho Chi Minh City, Vietnam (06/2025 - 11/2025)</i>
+                        </div>
+                        <div class="pub-buttons-group">
+                            <a class="btn-square" href="Documents/Eureka_2025.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a>
                         </div>
                     </div>
                 </div>
-            </section>
-            
-            <section class="section">
-                <h2 class="section-title">JOURNALS / CONFERENCE PROCEEDINGS</h2>
-                <div id="conference-list">
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-            
-                        <div class="pub-content-box">
-                            
-                            <h3 class="pub-title">
-                                Structure Preserving Machine Learning Enhanced Numerical Methods for Partial Differential Equations
-                            </h3>
-            
-                            <div class="pub-authors">
-                                <b>Duy Khanh Dinh Hoang</b>, Quoc Thai Hoang, Van Hoai Tran, Thanh Nha Nguyen
-                            </div>
-            
-                            <div class="pub-venue">
-                                <i>Journal of Computer Methods in Applied Mechanics and Engineering (Elsevier)</i> - <span class="highlight-red">In submission</span>
-                            </div>            
-                        </div>
-                    </div>
-                    
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-            
-                        <div class="pub-content-box">
-                            
-                            <h3 class="pub-title">
-                                Physics-Informed Neural Networks in Meshfree Methods: Deep Energy Approach to Hyperelastic Problems
-                            </h3>
-            
-                            <div class="pub-authors">
-                                <b>Duy Khanh Dinh Hoang</b>, Quoc Thai Hoang, Trung Nghia Tran, Thanh Nha Nguyen
-                            </div>
-            
-                            <div class="pub-venue">
-                                <i>Journal of Engineering Analysis with Boundary Elements (Elsevier)</i> - <span class="highlight-red">In submission</span>
-                            </div>            
-                        </div>
-                    </div>
-                    
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-            
-                        <div class="pub-content-box">
-                            
-                            <h3 class="pub-title">
-                                Predicting Orthotropic Bone Remodeling: A Performance Comparison of the Finite Element Method and the Tchebychev-Radial Point Interpolation Method
-                            </h3>
-            
-                            <div class="pub-authors">
-                                <b>Duy Khanh Dinh Hoang</b>, Quoc Thai Hoang, Trung Nghia Tran, Thanh Nha Nguyen
-                            </div>
-            
-                            <div class="pub-venue">
-                                <i>The 11th International Conferences in Vietnam on the Development of Biomedical Engineering (BME11), IFMBE Proceedings - Khanh Hoa Province, Vietnam (29-31/07/2026)</i> 
-                            </div>            
-                        </div>
-                    </div>
-                    
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-            
-                        <div class="pub-content-box">
-                            
-                            <h3 class="pub-title">
-                                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0955799726002924">An efficient enhanced Tchebychev–radial point interpolation method for bone remodeling analysis</a>
-                            </h3>
-            
-                            <div class="pub-authors">
-                                <b>Duy Khanh Dinh Hoang</b>, Quoc Thai Hoang, Trung Nghia Tran, Thanh Nha Nguyen
-                            </div>
-                            <div class="pub-venue">
-                                <i>Journal of Engineering Analysis with Boundary Elements (Elsevier)</i>
-                            </div> 
-                            <div class="pub-authors">
-                               <b>DOI: 10.1016/j.enganabound.2026.106922 (IF = 3.5)</b>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-            
-                        <div class="pub-content-box">
-                            
-                            <h3 class="pub-title">
-                                A novel finite element-intergrated deep energy method via KAN-informed neural networks and fractional function for 3D hyperelasticity
-                            </h3>
-            
-                            <div class="pub-authors">
-                                Quoc Thai Hoang, <b>Duy Khanh Dinh Hoang</b>, Thanh Nha Nguyen
-                            </div>
-            
-                            <div class="pub-venue">
-                                <i>Journal of Computers & Structures (Elsevier)</i> - <span class="highlight-red">In submission</span>
-                            </div>            
-                        </div>
-                    </div>
-                    
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-            
-                        <div class="pub-content-box">
-                            
-                            <h3 class="pub-title">
-                                <a href="https://vjs.ac.vn/vjmech/article/view/23957">A Moving Kriging Meshfree Approach for Analyzing Large Deformation of Hyperelastic Model</a>
-                            </h3>
-            
-                            <div class="pub-authors">
-                                Kha Vy Vu Hoang, <b>Duy Khanh Dinh Hoang</b>, Thanh Nha Nguyen
-                            </div>
-            
-                            <div class="pub-venue">
-                                <i>Vietnam Journal of Mechanics</i> 
-                            </div>
-                            <div class="pub-authors">
-                               <b>DOI: 10.15625/0866-7136/23957 (DOAJ)</b>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                               Acoustic Wave Propagation in the Human Ear Canal Using Thermoviscous Boundary Layer Impedance
-                            </h3>
-                            <div class="pub-authors">
-                                <b>Duy Khanh Dinh Hoang</b>, Trung Nghia Tran, Tich Thien Truong, Thanh Nha Nguyen
-                            </div>
-                            <div class="pub-venue">
-                                <i>The 16th National Conference on Solid Mechanics - Thai Nguyen Province, Vietnam (28-29/11/2025)</i>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                                Nonlinear Simulation of Human Skin under Large Deformations with the Ogden Hyperelastic Model Using a Meshless Method
-                            </h3>
-                            <div class="pub-authors">
-                                <b>Duy Khanh Dinh Hoang</b>, Trung Nghia Tran, Tich Thien Truong, Thanh Nha Nguyen
-                            </div>
-                            <div class="pub-venue">
-                                <i>The International Symposium on Engineering and Technology 2025 (ISET 2025) - Taichung City, Taiwan (05-06/11/2025)</i>
-                            </div>
+                <div class="pub-item-modern" data-type="competition">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            MEMORY: A mobile application to support memory improvement for Alzheimer’s Patients
+                        </h3>
+                        <div class="pub-authors">
+                            <b>Duy Khanh Dinh Hoang</b>, Gia Khang Trinh, Quoc Thai Hoang, Le Vy Doan, Ngoc Nhon Huynh, My Quyen Do
                         </div>
-                    </div>
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                                <a href="https://iopscience.iop.org/article/10.1088/1742-6596/3180/1/012060">A meshfree method based on moving Kriging interpolation for the analysis of acoustic wave propagation problems</a>
-                            </h3>
-                            <div class="pub-authors">
-                                <b>Duy Khanh Dinh Hoang</b>, My Hien Nguyen Thi
-                            </div>
-                            <div class="pub-venue">
-                                <i>The International Symposium on Applied Science 2025 (ISAS 2025) - Ho Chi Minh City, Vietnam (17-19/10/2025)</i>
-                            </div>
-                            <div class="pub-authors">
-                               <b>DOI: 10.1088/1742-6596/3180/1/012060 (SCI = 0.187)</b>
-                            </div>
+                        <div class="pub-authors">
+                            Mentors: Assoc. Prof. Thanh Nha Nguyen, M.E. Hai Thanh Hoang Le, MSc. Thu Suong Nguyen Thi, MSc. Nhat Le Tran Thi, Dr. Vinh Khang Nguyen
                         </div>
-                    </div>
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                                <a href="https://iopscience.iop.org/article/10.1088/1742-6596/3180/1/012008">Leave-One-Subject-Out (LOSO)-Validated Ensemble of Bi-LSTM and Transformer Models for Unusual Activity Detection</a>
-                            </h3>
-                            <div class="pub-authors">
-                                The Hoang Nguyen, Gia Huy Ly, <b>Duy Khanh Dinh Hoang</b>
-                            </div>
-                            <div class="pub-venue">
-                                <i>The International Symposium on Applied Science 2025 (ISAS 2025) - Ho Chi Minh City, Vietnam (17-19/10/2025)</i> 
-                            </div>
-                            <div class="pub-authors">
-                               <b>DOI: 10.1088/1742-6596/3180/1/012008 (SCI = 0.187)</b>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                                Analysis and Simulation of Microwave Radiation on Human Skin Layers Model using The Finite Element Method
-                            </h3>
-                            <div class="pub-authors">
-                               <b>Duy Khanh Dinh Hoang</b>, Trung Nghia Tran, Tich Thien Truong, Thanh Nha Nguyen
-                            </div>
-                            <div class="pub-venue">
-                                <i>The International Symposium on Applied Science 2024 (ISAS 2024) - Ho Chi Minh City, Vietnam (18-20/10/2024)</i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                                <a href="https://link.springer.com/chapter/10.1007/978-3-031-90194-2_67">Simulation Of Mechanical Behaviour For Human Skin Using Finite Element Method With The Third-order Ogden Hyperelastic Model</a>
-                            </h3>
-                            <div class="pub-authors">
-                               <b>Duy Khanh Dinh Hoang</b>, Trung Nghia Tran, Tich Thien Truong, Thanh Nha Nguyen
-                            </div>
-                            <div class="pub-venue">
-                                <i>The 10th International Conferences in Vietnam on the Development of Biomedical Engineering (BME10), IFMBE Proceedings - Binh Thuan Province, Vietnam (25-27/07/2024)</i>
-                            </div>
-                            <div class="pub-authors">
-                               <b>DOI: 10.1007/978-3-031-90194-2_67 (SCI = 0.124)</b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                                <a href="https://drive.google.com/file/d/1uw_E9coo7foHWxW8No4EyQwdSGdZg8cP/view">Finite Element Analysis of Heat Transfer in Multi-layered Structures</a>
-                            </h3>
-                            <div class="pub-authors">
-                               Thanh Luan Vo, Gia Khang Trinh, Du Anh Tran, <b>Duy Khanh Dinh Hoang</b>, Thanh Nha Nguyen
-                            </div>
-                            <div class="pub-venue">
-                                <i>The 14th OISP Science and Technology Symposium for Students (OSTS14) - Ho Chi Minh City, Vietnam (21/07/2024)</i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                                <a href="https://cohocvietnam.org.vn/media/upload/editor/files/Bia%20%2B%20Muc%20luc%20Tap%202.pdf">Analysis of Heat Transfer in Aluminum Window Frame</a>
-                            </h3>
-                            <div class="pub-authors">
-                            Gia Khang Trinh,  Thanh Luan Vo, <b>Duy Khanh Dinh Hoang</b>, Thanh Nha Nguyen
-                            </div>
-                            <div class="pub-venue">
-                                <i>National Conference on Mechanics, Celebrating the 45th anniversary of the Institute of Mechanics - Ha Noi City, Vietnam (09/04/2024)</i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                                <a href="https://ieeexplore.ieee.org/document/10565312/">Harnessing The Self-Healing Effect of Terahertz Rays: Advancements and Applications</a>
-                            </h3>
-                            <div class="pub-authors">
-                               Huy Manh Tran, <b>Duy Khanh Dinh Hoang</b>
-                            </div>
-                            <div class="pub-venue">
-                                <i>The International Conference on Health Science and Technology (ICHST-2023), IEEE Xplore - Ha Noi City, Vietnam (28-29/12/2023)</i>
-                            </div>
-                            <div class="pub-authors">
-                               <b>DOI: </b>10.1109/ICHST59286.2023.10565312, ISBN: </b>979-8-3503-1572-1
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pub-item-modern">
-                        <div class="pub-number-box"></div>
-                        <div class="pub-content-box">
-                            <h3 class="pub-title">
-                                Evaluation of Lable Noise, Feature Extraction and Classification of Electroencephalogram Signals based on Non-linear Analysis Techniques and Machine Learning Algorithms
-                            </h3>
-                            <div class="pub-authors">
-                            Phuc Khang Nguyen, Gia Quynh Nguyen, Vinh Thuan Tran Ho, Thuan Thien Le Tran, Anh Thu Ngo Ngoc, <b>Duy Khanh Dinh Hoang</b>, Anh Tu Tran, Quoc Khai Le
-                            </div>
-                            <div class="pub-venue">
-                                <i>The International Symposium on Applied Science 2023 (ISAS 2023) - Ho Chi Minh City, Vietnam (13-15/10/2023)</i>
-                            </div>
+                        <div class="pub-venue">
+                            <i>Bach Khoa Innovation 2025 (Semi-final Round) - Ho Chi Minh City, Vietnam (04/2025 - 08/2025)</i>
                         </div>
                     </div>
                 </div>
-            </section>
-            
-            <div style="margin-top: 60px; margin-bottom: 20px;">
-                <p class="caption">It is time for you to prove yourself, my warrior!</p>
-                <p class="caption caption-divider">- Lissandra (League of Legends) -</p>
+
+                <div class="pub-item-modern" data-type="competition">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            TSHT: Terahertz Sensing and Healing Technology
+                        </h3>
+                        <div class="pub-authors">
+                            Manh Huy Tran, <b>Duy Khanh Dinh Hoang</b>, Minh Kha Truong, Duc Minh Tran
+                        </div>
+                        <div class="pub-authors">
+                            Mentors: Assoc. Prof. Chan Khon Huynh
+                        </div>
+                        <div class="pub-venue">
+                            <i>IU Startup Demo Day 2024 (Top 8 Grand-final Round) - Ho Chi Minh City, Vietnam (02/2024 - 05/2024)</i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-item-modern" data-type="competition">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            Identification and Classification of Multi-label Brain Tumors using MATLAB Software integrated with Graphical User Interface based on Convolutional Neural Network and Deep Learning Algorithms
+                        </h3>
+                        <div class="pub-authors">
+                            <b>Duy Khanh Dinh Hoang</b>, Gia Huy Huynh Tran, Viet Khiem Pham, Minh Khoi Nguyen
+                        </div>
+                        <div class="pub-authors">
+                            Mentors: Dr. Quoc Khai Le
+                        </div>
+                        <div class="pub-venue">
+                            <i>BME Innovation 2024 (Semi-final Round) - Ho Chi Minh City, Vietnam (11/2023 - 01/2024)</i>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </main>
-    </div>
+        </section>
 
-    <script>
-    // Hàm dùng chung để đánh số tự động
-    function autoNumberList(containerId) {
-        const container = document.getElementById(containerId);
-        
-        if (container) {
-            // Lấy tất cả các item trong container đó
-            const items = container.querySelectorAll('.pub-item-modern');
+        <section class="section pub-section">
+            <h2 class="section-title"><i class="fa-solid fa-book-open title-icon"></i>JOURNALS / CONFERENCE PROCEEDINGS</h2>
+            <div id="conference-list" data-autonumber>
 
-            items.forEach((item, index) => {
-                // Đếm xuôi: 1, 2, 3...
-                const number = index + 1; 
-                
-                // Tìm ô số và điền vào
-                const numberBox = item.querySelector('.pub-number-box');
-                if (numberBox) {
-                    numberBox.textContent = `${number}.`; 
-                }
-            });
-        }
-    }
+                <div class="pub-item-modern" data-type="journal" data-status="submission">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            Structure Preserving Machine Learning Enhanced Numerical Methods for Partial Differential Equations
+                        </h3>
+                        <div class="pub-authors">
+                            <b>Duy Khanh Dinh Hoang</b>, Quoc Thai Hoang, Van Hoai Tran, Thanh Nha Nguyen
+                        </div>
+                        <div class="pub-venue">
+                            <i>Journal of Computer Methods in Applied Mechanics and Engineering (Elsevier)</i> - <span class="highlight-red">In submission</span>
+                        </div>
+                    </div>
+                </div>
 
-    // 1. Gọi hàm chạy cho danh sách COMPETITIONS
-    autoNumberList('competition-list');
+                <div class="pub-item-modern" data-type="journal" data-status="submission">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            Physics-Informed Neural Networks in Meshfree Methods: Deep Energy Approach to Hyperelastic Problems
+                        </h3>
+                        <div class="pub-authors">
+                            <b>Duy Khanh Dinh Hoang</b>, Quoc Thai Hoang, Trung Nghia Tran, Thanh Nha Nguyen
+                        </div>
+                        <div class="pub-venue">
+                            <i>Journal of Engineering Analysis with Boundary Elements (Elsevier)</i> - <span class="highlight-red">In submission</span>
+                        </div>
+                    </div>
+                </div>
 
-    // 2. Gọi hàm chạy cho danh sách CONFERENCE PROCEEDINGS
-    autoNumberList('conference-list');
+                <div class="pub-item-modern" data-type="conference">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            Predicting Orthotropic Bone Remodeling: A Performance Comparison of the Finite Element Method and the Tchebychev-Radial Point Interpolation Method
+                        </h3>
+                        <div class="pub-authors">
+                            <b>Duy Khanh Dinh Hoang</b>, Quoc Thai Hoang, Trung Nghia Tran, Thanh Nha Nguyen
+                        </div>
+                        <div class="pub-venue">
+                            <i>The 11th International Conferences in Vietnam on the Development of Biomedical Engineering (BME11), IFMBE Proceedings - Khanh Hoa Province, Vietnam (29-31/07/2026)</i>
+                        </div>
+                    </div>
+                </div>
 
-    // Hàm để mở/đóng nội dung Abstract và BibTeX
-function toggleContent(id) {
-    var element = document.getElementById(id);
-    if (element.style.display === "block") {
-        element.style.display = "none";
-    } else {
-        element.style.display = "block";
-    }
-}
-    </script>
+                <div class="pub-item-modern" data-type="journal">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0955799726002924">An efficient enhanced Tchebychev–radial point interpolation method for bone remodeling analysis</a>
+                        </h3>
+                        <div class="pub-authors">
+                            <b>Duy Khanh Dinh Hoang</b>, Quoc Thai Hoang, Trung Nghia Tran, Thanh Nha Nguyen
+                        </div>
+                        <div class="pub-venue">
+                            <i>Journal of Engineering Analysis with Boundary Elements (Elsevier)</i>
+                        </div>
+                        <div class="pub-authors pub-doi">
+                           <b>DOI: 10.1016/j.enganabound.2026.106922 (IF = 3.5)</b>
+                        </div>
+                        <div class="pub-buttons-group">
+                            <a class="btn-square" href="https://doi.org/10.1016/j.enganabound.2026.106922" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-item-modern" data-type="journal" data-status="submission">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            A novel finite element-intergrated deep energy method via KAN-informed neural networks and fractional function for 3D hyperelasticity
+                        </h3>
+                        <div class="pub-authors">
+                            Quoc Thai Hoang, <b>Duy Khanh Dinh Hoang</b>, Thanh Nha Nguyen
+                        </div>
+                        <div class="pub-venue">
+                            <i>Journal of Computers &amp; Structures (Elsevier)</i> - <span class="highlight-red">In submission</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-item-modern" data-type="journal">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            <a href="https://vjs.ac.vn/vjmech/article/view/23957">A Moving Kriging Meshfree Approach for Analyzing Large Deformation of Hyperelastic Model</a>
+                        </h3>
+                        <div class="pub-authors">
+                            Kha Vy Vu Hoang, <b>Duy Khanh Dinh Hoang</b>, Thanh Nha Nguyen
+                        </div>
+                        <div class="pub-venue">
+                            <i>Vietnam Journal of Mechanics</i>
+                        </div>
+                        <div class="pub-authors pub-doi">
+                           <b>DOI: 10.15625/0866-7136/23957 (DOAJ)</b>
+                        </div>
+                        <div class="pub-buttons-group">
+                            <a class="btn-square" href="https://doi.org/10.15625/0866-7136/23957" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-item-modern" data-type="conference">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                           Acoustic Wave Propagation in the Human Ear Canal Using Thermoviscous Boundary Layer Impedance
+                        </h3>
+                        <div class="pub-authors">
+                            <b>Duy Khanh Dinh Hoang</b>, Trung Nghia Tran, Tich Thien Truong, Thanh Nha Nguyen
+                        </div>
+                        <div class="pub-venue">
+                            <i>The 16th National Conference on Solid Mechanics - Thai Nguyen Province, Vietnam (28-29/11/2025)</i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-item-modern" data-type="conference">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            Nonlinear Simulation of Human Skin under Large Deformations with the Ogden Hyperelastic Model Using a Meshless Method
+                        </h3>
+                        <div class="pub-authors">
+                            <b>Duy Khanh Dinh Hoang</b>, Trung Nghia Tran, Tich Thien Truong, Thanh Nha Nguyen
+                        </div>
+                        <div class="pub-venue">
+                            <i>The International Symposium on Engineering and Technology 2025 (ISET 2025) - Taichung City, Taiwan (05-06/11/2025)</i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-item-modern" data-type="conference">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            <a href="https://iopscience.iop.org/article/10.1088/1742-6596/3180/1/012060">A meshfree method based on moving Kriging interpolation for the analysis of acoustic wave propagation problems</a>
+                        </h3>
+                        <div class="pub-authors">
+                            <b>Duy Khanh Dinh Hoang</b>, My Hien Nguyen Thi
+                        </div>
+                        <div class="pub-venue">
+                            <i>The International Symposium on Applied Science 2025 (ISAS 2025) - Ho Chi Minh City, Vietnam (17-19/10/2025)</i>
+                        </div>
+                        <div class="pub-authors pub-doi">
+                           <b>DOI: 10.1088/1742-6596/3180/1/012060 (SCI = 0.187)</b>
+                        </div>
+                        <div class="pub-buttons-group">
+                            <a class="btn-square" href="https://doi.org/10.1088/1742-6596/3180/1/012060" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-item-modern" data-type="conference">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            <a href="https://iopscience.iop.org/article/10.1088/1742-6596/3180/1/012008">Leave-One-Subject-Out (LOSO)-Validated Ensemble of Bi-LSTM and Transformer Models for Unusual Activity Detection</a>
+                        </h3>
+                        <div class="pub-authors">
+                            The Hoang Nguyen, Gia Huy Ly, <b>Duy Khanh Dinh Hoang</b>
+                        </div>
+                        <div class="pub-venue">
+                            <i>The International Symposium on Applied Science 2025 (ISAS 2025) - Ho Chi Minh City, Vietnam (17-19/10/2025)</i>
+                        </div>
+                        <div class="pub-authors pub-doi">
+                           <b>DOI: 10.1088/1742-6596/3180/1/012008 (SCI = 0.187)</b>
+                        </div>
+                        <div class="pub-buttons-group">
+                            <a class="btn-square" href="https://doi.org/10.1088/1742-6596/3180/1/012008" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-item-modern" data-type="conference">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            Analysis and Simulation of Microwave Radiation on Human Skin Layers Model using The Finite Element Method
+                        </h3>
+                        <div class="pub-authors">
+                           <b>Duy Khanh Dinh Hoang</b>, Trung Nghia Tran, Tich Thien Truong, Thanh Nha Nguyen
+                        </div>
+                        <div class="pub-venue">
+                            <i>The International Symposium on Applied Science 2024 (ISAS 2024) - Ho Chi Minh City, Vietnam (18-20/10/2024)</i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-item-modern" data-type="conference">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            <a href="https://link.springer.com/chapter/10.1007/978-3-031-90194-2_67">Simulation Of Mechanical Behaviour For Human Skin Using Finite Element Method With The Third-order Ogden Hyperelastic Model</a>
+                        </h3>
+                        <div class="pub-authors">
+                           <b>Duy Khanh Dinh Hoang</b>, Trung Nghia Tran, Tich Thien Truong, Thanh Nha Nguyen
+                        </div>
+                        <div class="pub-venue">
+                            <i>The 10th International Conferences in Vietnam on the Development of Biomedical Engineering (BME10), IFMBE Proceedings - Binh Thuan Province, Vietnam (25-27/07/2024)</i>
+                        </div>
+                        <div class="pub-authors pub-doi">
+                           <b>DOI: 10.1007/978-3-031-90194-2_67 (SCI = 0.124)</b>
+                        </div>
+                        <div class="pub-buttons-group">
+                            <a class="btn-square" href="https://doi.org/10.1007/978-3-031-90194-2_67" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-item-modern" data-type="conference">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            <a href="https://drive.google.com/file/d/1uw_E9coo7foHWxW8No4EyQwdSGdZg8cP/view">Finite Element Analysis of Heat Transfer in Multi-layered Structures</a>
+                        </h3>
+                        <div class="pub-authors">
+                           Thanh Luan Vo, Gia Khang Trinh, Du Anh Tran, <b>Duy Khanh Dinh Hoang</b>, Thanh Nha Nguyen
+                        </div>
+                        <div class="pub-venue">
+                            <i>The 14th OISP Science and Technology Symposium for Students (OSTS14) - Ho Chi Minh City, Vietnam (21/07/2024)</i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-item-modern" data-type="conference">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            <a href="https://cohocvietnam.org.vn/media/upload/editor/files/Bia%20%2B%20Muc%20luc%20Tap%202.pdf">Analysis of Heat Transfer in Aluminum Window Frame</a>
+                        </h3>
+                        <div class="pub-authors">
+                        Gia Khang Trinh,  Thanh Luan Vo, <b>Duy Khanh Dinh Hoang</b>, Thanh Nha Nguyen
+                        </div>
+                        <div class="pub-venue">
+                            <i>National Conference on Mechanics, Celebrating the 45th anniversary of the Institute of Mechanics - Ha Noi City, Vietnam (09/04/2024)</i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-item-modern" data-type="conference">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            <a href="https://ieeexplore.ieee.org/document/10565312/">Harnessing The Self-Healing Effect of Terahertz Rays: Advancements and Applications</a>
+                        </h3>
+                        <div class="pub-authors">
+                           Huy Manh Tran, <b>Duy Khanh Dinh Hoang</b>
+                        </div>
+                        <div class="pub-venue">
+                            <i>The International Conference on Health Science and Technology (ICHST-2023), IEEE Xplore - Ha Noi City, Vietnam (28-29/12/2023)</i>
+                        </div>
+                        <div class="pub-authors pub-doi">
+                           <b>DOI: </b>10.1109/ICHST59286.2023.10565312, <b>ISBN: </b>979-8-3503-1572-1
+                        </div>
+                        <div class="pub-buttons-group">
+                            <a class="btn-square" href="https://doi.org/10.1109/ICHST59286.2023.10565312" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> DOI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pub-item-modern" data-type="conference">
+                    <div class="pub-number-box"></div>
+                    <div class="pub-content-box">
+                        <h3 class="pub-title">
+                            Evaluation of Lable Noise, Feature Extraction and Classification of Electroencephalogram Signals based on Non-linear Analysis Techniques and Machine Learning Algorithms
+                        </h3>
+                        <div class="pub-authors">
+                        Phuc Khang Nguyen, Gia Quynh Nguyen, Vinh Thuan Tran Ho, Thuan Thien Le Tran, Anh Thu Ngo Ngoc, <b>Duy Khanh Dinh Hoang</b>, Anh Tu Tran, Quoc Khai Le
+                        </div>
+                        <div class="pub-venue">
+                            <i>The International Symposium on Applied Science 2023 (ISAS 2023) - Ho Chi Minh City, Vietnam (13-15/10/2023)</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-quote">
+            <p class="caption">It is time for you to prove yourself, my warrior!</p>
+            <p class="caption caption-divider">- Lissandra (League of Legends) -</p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; Khanh's personal site. All rights reserved. All opinions, findings, conclusions and recommendations expressed on this site are personal views, and do not reflect the views of any employer or funder.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

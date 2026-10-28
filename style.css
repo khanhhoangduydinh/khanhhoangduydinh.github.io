@@ -1,757 +1,1621 @@
 /* =========================================
-   1. CẤU HÌNH CHUNG (RESET & TYPOGRAPHY)
+   0. DESIGN TOKENS (LIGHT / DARK THEME)
 ========================================= */
-* {
+:root {
+    --bg: #ffffff;
+    --bg-soft: #f6f8fb;
+    --surface: #ffffff;
+    --border: #e3e8ef;
+    --text: #1c2430;
+    --text-muted: #4f5d70;
+    --text-faint: #8592a5;
+    --accent: #1d5fbf;
+    --accent-strong: #154a96;
+    --accent-2: #7c3aed;
+    --accent-soft: rgba(29, 95, 191, 0.08);
+    --accent-ring: rgba(29, 95, 191, 0.28);
+    --on-accent: #ffffff;
+    --danger: #c62828;
+    --danger-soft: rgba(198, 40, 40, 0.08);
+    --teal: #0f766e;
+    --teal-soft: rgba(15, 118, 110, 0.1);
+    --amber: #b45309;
+    --amber-soft: rgba(180, 83, 9, 0.1);
+    --header-bg: rgba(255, 255, 255, 0.82);
+    --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+    --shadow-md: 0 8px 24px rgba(16, 24, 40, 0.08);
+    --radius: 14px;
+    --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+    --header-h: 64px;
+    --content-w: 1000px;
+}
+
+[data-theme="dark"] {
+    --bg: #0e1116;
+    --bg-soft: #141920;
+    --surface: #161b23;
+    --border: #262e3a;
+    --text: #e4e8ee;
+    --text-muted: #a7b1bf;
+    --text-faint: #717d8e;
+    --accent: #7fb0ff;
+    --accent-strong: #b0ccff;
+    --accent-2: #b794f6;
+    --accent-soft: rgba(127, 176, 255, 0.1);
+    --accent-ring: rgba(127, 176, 255, 0.32);
+    --on-accent: #0e1116;
+    --danger: #ff7b72;
+    --danger-soft: rgba(255, 123, 114, 0.12);
+    --teal: #5eead4;
+    --teal-soft: rgba(94, 234, 212, 0.1);
+    --amber: #fbbf24;
+    --amber-soft: rgba(251, 191, 36, 0.1);
+    --header-bg: rgba(14, 17, 22, 0.8);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================================
+   1. RESET & TYPOGRAPHY
+========================================= */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 16px);
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif; 
-    font-size: 15px;      /* THỐNG NHẤT FONT-SIZE CHO TOÀN BỘ NỘI DUNG */
-    line-height: 1.15;    /* THỐNG NHẤT LINE-HEIGHT CHO TOÀN BỘ NỘI DUNG */
-    color: #000; 
-    background-color: #fff; 
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text);
+    background-color: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Định dạng Link chuẩn Academic cho phần nội dung */
+body.no-scroll {
+    overflow: hidden;
+}
+
 a {
-    color: #0000EE; 
-    text-decoration: none; 
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #003399; 
-    text-decoration: underline; 
+    color: var(--accent-strong);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 img {
-    max-width: 100%; 
-    height: auto; 
+    max-width: 100%;
+    height: auto;
     display: block;
 }
 
-/* =========================================
-   2. BỐ CỤC CHÍNH (LAYOUT 2 CỘT)
-========================================= */
-.wrapper {
-    display: flex; 
-    min-height: 100vh; 
+b, strong {
+    font-weight: 600;
+}
+
+::selection {
+    background: var(--accent-ring);
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.icon {
+    color: var(--accent);
+    font-style: normal;
+    width: 1.25em;
+    text-align: center;
+    margin-right: 0.45em;
 }
 
 /* =========================================
-   3. CỘT TRÁI (SIDEBAR MENU)
+   2. HEADER (STICKY GLASS NAVBAR)
 ========================================= */
-.sidebar {
-    width: 300px; 
-    padding: 40px; 
-    position: sticky; 
+.site-header {
+    position: sticky;
     top: 0;
-    height: 100vh; 
-    border-right: 1px solid #ddd; 
-    background-color: #f5f5f5 !important; 
-    z-index: 100;
+    z-index: 1000;
+    height: var(--header-h);
+    background: var(--header-bg);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sidebar-avatar img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; 
-    object-fit: cover;
-    margin-bottom: 20px;
-    display: block;     
-    margin-left: auto;
+.site-header.is-scrolled {
+    border-bottom-color: var(--border);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-inner {
+    max-width: 1240px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-right: auto;
+    color: var(--text);
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
 }
 
-.site-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 40px; 
-    letter-spacing: 1px; 
-    text-transform: uppercase; 
-    text-align: center; 
+.brand:hover {
+    color: var(--accent);
+    text-decoration: none;
 }
 
-/* Bảo vệ link tiêu đề không bị xanh */
-.site-title a {
-    color: #000 !important;
-    text-decoration: none !important;
+.brand img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 2px var(--surface), 0 0 0 3.5px var(--accent-ring);
 }
 
 .nav-menu ul {
-    list-style: none; 
-}
-
-.nav-menu li {
-    margin-bottom: 12px; 
+    list-style: none;
+    display: flex;
+    gap: 2px;
 }
 
 .nav-menu a {
-    color: #666 !important; /* Bảo vệ link menu */
-    text-decoration: none !important;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    white-space: nowrap;
 }
 
-.nav-menu a:hover,
+.nav-menu a:hover {
+    color: var(--text);
+    background: var(--accent-soft);
+    text-decoration: none;
+}
+
 .nav-menu a.active-menu {
-    color: #000 !important;
-    text-decoration: underline !important;
+    color: var(--accent);
+    background: var(--accent-soft);
 }
 
-.sidebar-footer {
-    position: absolute; 
-    bottom: 40px; 
-    left: 40px; 
-    
-    /* --- 3 DÒNG MỚI BỔ SUNG --- */
-    right: 40px;             /* Chốt chặn lề phải, ép chữ phải rớt dòng */
-    text-align: left;     /* Căn đều 2 bên trái phải */
-    font-size: 10px;         /* Thu nhỏ chữ lại một chút cho hợp với phần disclaimer */
-    
-    color: #999;
-    line-height: 1.4;
+.nav-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.icon-btn {
+    width: 38px;
+    height: 38px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.icon-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent-ring);
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.progress-bar {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
 }
 
 /* =========================================
-   4. CỘT PHẢI (NỘI DUNG CHÍNH)
+   3. MAIN CONTENT & SECTION HEADINGS
 ========================================= */
 .content {
-    flex: 1; 
-    padding: 50px 40px; 
-    max-width: 1100px; 
-    margin: 0 auto;   
-}
-
-/* --- ẢNH BÌA & CAPTION --- */
-.hero-image img {
-    width: 100%;
-    height: 400px;        
-    object-fit: cover;     
-    object-position: center 30%; 
-}
-
-.caption {
-    font-style: italic; 
-    color: #777;
-    margin-top: 10px;
-    text-align: center;        
-    display: block;            
-    margin-bottom: 0;  
-}
-
-p.caption + p.caption {
-    margin-top: 5px; 
-}
-
-.caption-divider::after {
-    content: ""; 
-    display: block;
-    width: 60px; 
-    height: 1px; 
-    background-color: #777; 
-    margin: 15px auto 0; 
+    max-width: var(--content-w);
+    margin: 0 auto;
+    padding: 48px 24px 24px;
 }
 
 .section {
-    margin-bottom: 20px; /* Đặt một khoảng cách cố định dưới mỗi khu vực */
+    margin-bottom: 56px;
 }
 
-.section-title {
-    font-size: 22px;
-    font-weight: bold; /* In đậm chữ giống hình của bạn */
-    text-transform: uppercase; /* Tự động viết hoa toàn bộ */
-    
-    /* QUAN TRỌNG: Xóa margin-top để không bị cộng dồn khoảng trống */
-    margin-top: 0; 
-    
-    margin-bottom: 20px; /* Khoảng cách từ đường kẻ xuống nội dung */
-    border-bottom: 1px solid #000; 
-    padding-bottom: 10px; /* Khoảng cách từ chữ xuống đường kẻ */
+.section-title,
+.bio-heading {
+    position: relative;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+    color: var(--text);
+    margin: 0 0 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    text-transform: uppercase;
+}
+
+.section-title::after,
+.bio-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 56px;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.title-icon {
+    color: var(--accent);
+    font-size: 0.85em;
+    margin-right: 12px;
+}
+
+/* --- Shared card look --- */
+.edu-item,
+.pub-item-modern,
+.award-item,
+.research-project,
+.teaching-item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.edu-item:hover,
+.pub-item-modern:hover,
+.award-item:hover,
+.research-project:hover,
+.teaching-item:hover {
+    border-color: var(--accent-ring);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    border-color: var(--accent-ring);
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
+}
+
+.btn-primary:hover {
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
+    color: var(--on-accent);
 }
 
 /* =========================================
-   5. CÁC THÀNH PHẦN NỘI DUNG (SECTIONS)
+   4. HOME — INTRODUCTION (HERO)
 ========================================= */
-
-/* --- INTRODUCTION --- */
-.intro-title {
-    border-top: none;  
-    border-bottom: 1px solid #000; 
-    padding-bottom: 15px; 
-    margin-bottom: 20px;
-    font-size: 22px;
-    text-transform: uppercase; 
-    font-weight: normal;        
+.intro-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 44px;
+    align-items: center;
+    padding: 36px 40px;
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) + 6px);
+    background: linear-gradient(135deg, var(--accent-soft), transparent 55%), var(--surface);
+    overflow: hidden;
 }
 
-.intro-container {
-    display: flex;            
-    align-items: flex-start; 
+/* Dotted "graph paper" texture fading in from the right */
+.intro-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(var(--accent-ring) 1px, transparent 1px);
+    background-size: 18px 18px;
+    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.55), transparent 60%);
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.55), transparent 60%);
+    pointer-events: none;
 }
 
 .intro-avatar {
-    flex: 0 0 auto; 
-    margin-right: 40px; 
+    position: relative;
+    width: 220px;
+    height: 220px;
+}
+
+.intro-avatar::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, var(--accent), var(--accent-2), #06b6d4, var(--accent));
+    animation: spin 12s linear infinite;
 }
 
 .intro-avatar img {
-    width: 200px;            
-    height: 200px;            
-    border-radius: 50%;      
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    border: 5px solid var(--surface);
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 .intro-content {
-    flex: 2;                 
+    position: relative;
 }
 
 .intro-content p {
-    margin-bottom: 4px; 
+    margin-bottom: 2px;
 }
 
-/* --- BIOGRAPHY & CONNECT --- */
+.hero-name {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+}
+
+.hero-role {
+    display: inline-block;
+    padding: 3px 14px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 16px !important;
+}
+
+.intro-content .addr {
+    color: var(--text-faint);
+    font-size: 0.88rem;
+    margin: 0 0 8px 1.7em;
+}
+
+.contact-list {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+}
+
+.copy-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    margin-left: 6px;
+    border-radius: 7px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-faint);
+    font-size: 0.78rem;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover,
+.copy-btn.is-done {
+    color: var(--accent);
+    border-color: var(--accent-ring);
+}
+
+/* =========================================
+   5. HOME — BIOGRAPHY & CONNECT
+========================================= */
 .bio-container {
-    display: flex;            
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(220px, 1fr);
     gap: 40px;
-    align-items: stretch; 
-    margin-top: 30px; 
-}
-
-.bio-left-content,
-.bio-right-connect {
-    display: flex;
-    flex-direction: column;
-    padding-top: 0 !important; 
-}
-
-.bio-left-content {
-    flex: 3; 
-    text-align: justify; 
+    align-items: start;
 }
 
 .bio-left-content p {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    text-align: justify;
+    color: var(--text-muted);
+}
+
+.bio-left-content p b {
+    color: var(--text);
+}
+
+.bio-left-content .bio-heading + p,
+.bio-left-content p {
+    hyphens: auto;
+}
+
+.bio-heading.spaced {
+    margin-top: 36px;
+}
+
+.callout {
+    padding: 14px 18px;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    background: var(--accent-soft);
 }
 
 .bio-right-connect {
-    flex: 1; 
-    border-left: 1px solid #ddd; 
-    padding-left: 30px;        
-}
-
-.bio-heading {
-    font-size: 22px; 
-    font-weight: normal; 
-    color: #000;
-    margin-top: 0 !important;  
-    margin-bottom: 20px;       
-    padding-bottom: 10px;      
-    border-bottom: 1px solid #000; 
-    text-transform: none; 
+    position: sticky;
+    top: calc(var(--header-h) + 24px);
 }
 
 .social-item {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
-    color: #333;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.social-item i {
-    width: 25px;
-    font-size: 18px; /* Giữ icon to hơn text 1 chút để dễ nhìn */
+    gap: 12px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .social-item:hover {
-    color: #000;
-    text-decoration: underline;
+    color: var(--text);
+    text-decoration: none;
+    border-color: var(--accent-ring);
+    box-shadow: var(--shadow-sm);
+    transform: translateX(4px);
 }
 
-/* --- EDUCATION --- */
+.social-item i {
+    width: 22px;
+    font-size: 1.15rem;
+    text-align: center;
+}
+
+.brand-linkedin { color: #0a66c2; }
+.brand-github { color: #181717; }
+.brand-scholar { color: #4285f4; }
+.brand-orcid { color: #a6ce39; }
+.brand-researchgate { color: #00ccbb; }
+
+[data-theme="dark"] .brand-github { color: #e6edf3; }
+[data-theme="dark"] .brand-linkedin { color: #4c9be8; }
+
+/* =========================================
+   6. EDUCATION / INDUSTRY (TIMELINE)
+========================================= */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    border-radius: 2px;
+    background: linear-gradient(var(--accent), var(--border));
+}
+
 .edu-item {
-    display: flex;              
-    justify-content: space-between; 
-    align-items: flex-start;    
-    margin-bottom: 20px;        
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+}
+
+.edu-item::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
+}
+
+.edu-item:last-child {
+    margin-bottom: 0;
 }
 
 .edu-info {
-    flex: 1;                    
-    padding-right: 20px;        
+    flex: 1;
+    min-width: 0;
 }
 
 .edu-info h4 {
-    font-size: 17px; /* Tiêu đề ngành học lớn hơn nội dung */
-    margin-bottom: 5px;
-    color: #000;
+    font-size: 1.08rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 2px;
+    color: var(--text);
+}
+
+.edu-info h4 a {
+    color: var(--text);
+}
+
+.edu-info h4 a:hover {
+    color: var(--accent);
 }
 
 .edu-school {
     font-style: italic;
-    color: #555;
-    margin-bottom: 5px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
 }
 
 .edu-desc {
-    color: #444;
-    margin-bottom: 2px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.edu-desc:empty {
+    display: none;
+}
+
+.advisor-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 .edu-date {
-    flex: 0 0 auto;             
-    text-align: right;          
-    font-weight: bold;          
-    color: #333;
-    white-space: nowrap;        
+    flex: 0 0 auto;
+    padding: 5px 12px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.45;
+    text-align: center;
+    white-space: nowrap;
 }
 
-/* --- PUBLICATIONS & COMPETITIONS --- */
+/* =========================================
+   7. NEWS
+========================================= */
+.news-list {
+    margin-left: 20px;
+}
+
+.news-list li {
+    margin-bottom: 8px;
+}
+
+.news-list.is-enhanced {
+    list-style: none;
+    margin-left: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    padding: 6px 22px;
+}
+
+.news-list.is-enhanced li {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 18px;
+    margin: 0;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--border);
+}
+
+.news-list.is-enhanced li:last-child {
+    border-bottom: none;
+}
+
+.news-list.is-enhanced li.is-collapsed {
+    display: none;
+}
+
+.news-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    padding-top: 2px;
+}
+
+.news-body {
+    color: var(--text-muted);
+}
+
+.news-toggle {
+    margin-top: 14px;
+}
+
+/* =========================================
+   8. PAGE QUOTE & FOOTER
+========================================= */
+.page-quote {
+    position: relative;
+    max-width: 680px;
+    margin: 72px auto 24px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.page-quote::before {
+    content: "\201C";
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-serif);
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.25;
+}
+
+.caption {
+    display: block;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+p.caption + p.caption {
+    margin-top: 8px;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    color: var(--text-faint);
+}
+
+.caption-divider::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    margin: 16px auto 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.site-footer {
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+    background: var(--bg-soft);
+}
+
+.footer-inner {
+    max-width: var(--content-w);
+    margin: 0 auto;
+    padding: 28px 24px;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--text-faint);
+    text-align: center;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 900;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease;
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+}
+
+/* =========================================
+   9. PUBLICATIONS & COMPETITIONS
+========================================= */
+.pub-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    margin-bottom: 36px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-soft);
+}
+
+.filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chip:hover {
+    border-color: var(--accent-ring);
+    color: var(--accent);
+}
+
+.chip .count {
+    padding: 0 7px;
+    border-radius: 999px;
+    background: var(--bg-soft);
+    font-size: 0.72rem;
+    line-height: 1.6;
+}
+
+.chip.is-active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
+}
+
+.chip.is-active .count {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.pub-search {
+    position: relative;
+    flex: 1 1 220px;
+    max-width: 320px;
+}
+
+.pub-search i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-faint);
+    font-size: 0.85rem;
+}
+
+.pub-search input {
+    width: 100%;
+    padding: 8px 12px 8px 34px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.9rem;
+}
+
+.pub-search input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.pub-empty {
+    padding: 24px;
+    text-align: center;
+    font-style: italic;
+    color: var(--text-faint);
+}
+
+.is-hidden {
+    display: none !important;
+}
+
 .pub-item-modern {
-    display: flex;          
-    gap: 15px;              
-    margin-bottom: 30px;    
-    align-items: flex-start; 
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
 }
 
-.pub-number-box {
-    flex: 0 0 30px;         
-    font-weight: bold;
-    color: #0000EE !important;         
-    font-size: 20px; /* Số thứ tự cần nổi bật */     
-    padding-top: 0;         
-    text-align: right;      
+.pub-number-box,
+.award-number-box {
+    flex: 0 0 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
 }
 
 .pub-content-box {
-    flex: 1;                
+    flex: 1;
+    min-width: 0;
 }
 
-.pub-title a[href], 
+.pub-title {
+    font-size: 1.05rem;
+    font-weight: 650;
+    line-height: 1.4;
+    color: var(--text);
+    margin: 0 0 6px;
+}
+
+.pub-title a[href],
 .award-title a[href] {
-    color: #0000EE !important; 
+    color: var(--accent);
 }
 
-.pub-title a[href]:hover, 
-.award-title a[href]:hover {
-    color: #003399 !important;
-    text-decoration: underline !important;
+.pub-authors,
+.pub-venue {
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    line-height: 1.5;
+    margin: 0 0 4px;
 }
 
-.pub-authors, .pub-venue {
-    color: #333;
-    margin-bottom: 5px;
+.pub-authors b {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.pub-doi {
+    font-size: 0.85rem;
+}
+
+.pub-doi b {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.pub-content-box > div:last-child {
+    margin-bottom: 0;
 }
 
 .highlight-red {
-    color: #d93025;
-    font-weight: bold;
-    font-style: italic;
+    display: inline-block;
+    padding: 0 9px;
+    border-radius: 999px;
+    background: var(--danger-soft);
+    color: var(--danger);
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-style: normal;
+    white-space: nowrap;
 }
 
-/* NÚT BẤM (SQUARE BUTTONS) */
 .pub-buttons-group {
-    margin-top: 8px;
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
 }
+
+.pub-badge,
+.btn-square {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 9px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.6;
+}
+
+.pub-badge--journal { background: var(--accent-soft); color: var(--accent); }
+.pub-badge--conference { background: var(--teal-soft); color: var(--teal); }
+.pub-badge--competition { background: var(--amber-soft); color: var(--amber); }
 
 .btn-square {
-    display: inline-block;
-    padding: 3px 10px;          
-    border: 1px solid #333;     
-    color: #333 !important;
-    text-decoration: none !important;
-    font-weight: 500;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    background: transparent;
     transition: all 0.2s ease;
-    background-color: transparent;
 }
 
 .btn-square:hover {
-    background-color: #333;     
-    color: #fff !important;                
-    border-color: #333;
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-soft);
+    text-decoration: none;
 }
 
-/* --- AWARDS & CERTIFICATIONS --- */
-.awards-layout {
-    display: block !important;
-}
-
-.awards-list {
-    width: 100% !important; 
-}
-
+/* =========================================
+   10. HONORS, AWARDS & CERTIFICATIONS
+========================================= */
 .award-item {
     display: flex;
-    gap: 15px;               
-    margin-bottom: 30px;
-    align-items: baseline;   
-}
-
-.award-number-box {
-    flex: 0 0 30px;
-    font-weight: bold;
-    color: #2a7bbd;
-    font-size: 18px; /* Đồng bộ số thứ tự */
-    text-align: right;
-    padding-top: 0; 
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
 }
 
 .award-content-box {
     flex: 1;
+    min-width: 0;
 }
 
 .award-title {
-    font-size: 18px; 
-    font-weight: bold;
-    color: #000;
-    margin-top: 0 !important; 
-    margin-bottom: 5px;
+    font-size: 1.02rem;
+    font-weight: 650;
+    line-height: 1.45;
+    color: var(--text);
+    margin: 0 0 4px;
 }
 
 .award-desc {
-    color: #333;
-    margin-bottom: 5px;
-    text-align: justify;
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    margin-bottom: 8px;
 }
 
 .award-date {
-    font-style: italic;
-    color: #666;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 1px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
-.awards-gallery {
-    flex: 1; 
-    border-left: 1px solid #eee; 
-    padding-left: 30px;
-}
-
-.gallery-item {
-    margin-bottom: 30px; 
-}
-
-.gallery-item img {
-    width: 100%;        
-    border-radius: 4px; 
-    border: 1px solid #ddd; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-}
-
-.gallery-caption {
-    font-style: italic;
-    color: #777;
-    text-align: center; 
-    margin-top: 8px;
-}
-
-/* --- NEWS SECTION --- */
-.news-list {
-    list-style-type: disc; 
-    margin-left: 20px;     
-    padding-left: 0;
-}
-
-.news-list li {
-    margin-bottom: 6px;    
+.award-date::before {
+    content: "\f133";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
 }
 
 /* =========================================
-   6. RESPONSIVE (MOBILE VIEW)
+   11. RESEARCH
 ========================================= */
-@media (max-width: 900px) {
-    .awards-layout {
-        flex-direction: column; 
-    }
-    .awards-gallery {
-        width: 100%;
-        border-left: none;
-        padding-left: 0;
-        margin-top: 40px;
-        border-top: 1px solid #eee; 
-        padding-top: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .wrapper {
-        flex-direction: column; 
-    }
-    .sidebar {
-        width: 100%; 
-        height: auto; 
-        position: relative; 
-        border-right: none;
-        border-bottom: 1px solid #eee;
-        padding: 20px;
-        text-align: center; 
-    }
-    .sidebar-footer {
-        position: relative;
-        bottom: 0;
-        left: 0;
-        margin-top: 20px;
-    }
-    .content {
-        padding: 30px 20px; 
-    }
-    .intro-container {
-        flex-direction: column; 
-        align-items: center;    
-    }
-    .intro-avatar {
-        margin-right: 0;
-        margin-bottom: 30px;    
-    }
-    .intro-content {
-        text-align: center; 
-    }
-    .bio-container {
-        flex-direction: column;
-    }
-    .bio-right-connect {
-        border-left: none;
-        border-top: 1px solid #ddd;
-        padding-left: 0;
-        padding-top: 20px;
-        margin-top: 20px;
-    }
-    .edu-item {
-        flex-direction: column; 
-    }
-    .edu-date {
-        text-align: left;
-        margin-top: 5px;
-        font-style: italic;
-    }
-}
-
-/* 1. Tăng khoảng cách giữa các khu vực (section) lên 70px hoặc 80px cho thoáng */
-.section {
-    margin-top: 0 !important;
-    margin-bottom: 30px !important; /* Bạn có thể tăng lên 80px nếu thích rộng hơn nữa */
-}
-
-/* 2. Xóa khoảng trống thừa ở mục Education/Industry cuối cùng để lề chuẩn xác 100% */
-.edu-item:last-child {
-    margin-bottom: 0 !important;
-}
-/* =========================================
-   CĂN CHỈNH KHOẢNG CÁCH CHI TIẾT BÀI BÁO CHUẨN XÁC
-========================================= */
-
-/* 1. Tiêu đề bài báo */
-.pub-title {
-    margin-top: 0 !important;
-    margin-bottom: 6px !important; /* Khoảng cách cố định từ Tiêu đề xuống Tác giả */
-    line-height: 1.3 !important;   /* Giãn dòng một chút cho các tiêu đề dài (xuống dòng) dễ đọc hơn */
-}
-
-/* 2. Tên tác giả, DOI, và Thông tin hội nghị (Venue) */
-.pub-authors, 
-.pub-venue {
-    margin-top: 0 !important;
-    margin-bottom: 4px !important; /* Khoảng cách đều đặn giữa các dòng thông tin với nhau */
-    line-height: 1.4 !important;   /* Giãn dòng bên trong đoạn văn dài (nếu hội nghị dài quá 1 dòng) */
-}
-
-/* 3. Xóa khoảng trống thừa ở dòng cuối cùng của mỗi bài báo */
-.pub-content-box > div:last-child,
-.pub-venue:last-child {
-    margin-bottom: 0 !important;
-}
-
-/* =========================================
-   GIAO DIỆN TRANG RESEARCH (MẪU 2 CỘT: ẢNH TRÁI - CHỮ PHẢI)
-========================================= */
-
-/* Đoạn giới thiệu tổng quan ở đầu trang */
-.research-intro {
-    margin-bottom: 50px;
+.research-intro,
+.page-intro {
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--accent-soft), transparent 70%), var(--surface);
+    color: var(--text-muted);
     text-align: justify;
-    line-height: 1.5;
-    color: #333;
 }
 
-/* Khung chứa từng dự án */
+.research-list {
+    counter-reset: project;
+}
+
 .research-project {
-    display: flex;
-    gap: 30px;              /* Khoảng cách giữa cột ảnh và cột chữ */
-    margin-bottom: 50px;    /* Khoảng cách giữa các dự án */
-    align-items: flex-start; /* Ép nội dung căn thẳng từ trên cùng xuống */
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 28px;
+    padding: 24px;
+    margin-bottom: 28px;
+    counter-increment: project;
 }
 
-/* CỘT TRÁI: KHU VỰC ẢNH */
 .research-project-img {
-    flex: 0 0 300px;        /* Cố định chiều rộng cột ảnh là 300px (bạn có thể tăng giảm tùy ý) */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .research-project-img img {
-    width: 100%;            /* Ảnh tự động co giãn vừa vặn với cột 300px */
-    height: auto;
-    border-radius: 4px;     /* Bo góc ảnh cực nhẹ cho thanh lịch */
-    border: 1px solid #eee; /* Viền mờ mờ quanh ảnh */
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: #fff;
+    cursor: zoom-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* CỘT PHẢI: KHU VỰC NỘI DUNG */
+.research-project-img img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
 .research-project-content {
-    flex: 1;                /* Chiếm toàn bộ phần diện tích còn lại bên phải */
+    min-width: 0;
 }
 
 .research-project-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #4a7298;         /* Màu xanh lam nhạt y hệt trong hình mẫu của bạn */
-    margin-top: 0 !important;
-    margin-bottom: 15px !important;
-    border-bottom: none;
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text);
+    margin: 0 0 12px;
+}
+
+.research-project-title::before {
+    content: "Topic " counter(project, decimal-leading-zero);
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
 }
 
 .research-project-desc {
+    color: var(--text-muted);
     text-align: justify;
-    line-height: 1.5;
-    color: #333;
 }
 
-/* Định dạng các thẻ link [AAAI21a], [KDD21] trong đoạn văn */
-.research-project-desc a {
-    color: #555;
-    text-decoration: underline;
-}
-
-.research-project-desc a:hover {
-    color: #000;
-}
-
-/* --- RESPONSIVE MOBILE --- */
-/* Khi màn hình nhỏ (điện thoại), tự động chuyển về 1 cột (Ảnh trên - Chữ dưới) */
-@media (max-width: 768px) {
-    .research-project {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .research-project-img {
-        flex: 1 1 auto;
-        width: 100%;
-        max-width: 400px;  /* Khống chế không cho ảnh phình quá to trên mobile */
-        margin: 0 auto;    /* Căn giữa ảnh */
-    }
-}
-
-/* --- GẠCH ĐẦU DÒNG CHO TRANG RESEARCH --- */
 .research-bullet-list {
-    list-style-type: disc; /* Dấu chấm tròn đen */
-    margin-left: 20px;     /* Thụt lề vào 20px cho đẹp */
-    padding-left: 0;
-    margin-top: 5px;       /* Cách đoạn văn mở bài một chút */
-    margin-bottom: 15px;   /* Cách phần tử bên dưới */
+    list-style: none;
+    margin: 12px 0 0;
 }
 
 .research-bullet-list li {
-    color: #333;
-    line-height: 1.5;
-    margin-bottom: 8px;    /* Khoảng cách giữa các ý */
-    text-align: justify;   /* Vẫn căn đều 2 bên cho chữ */
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    text-align: justify;
 }
 
-/* Đổi màu chữ in đậm trong gạch đầu dòng (nếu có) */
+.research-bullet-list li::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 0.72em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
 .research-bullet-list li b {
-    color: #000;
+    color: var(--text);
 }
 
 /* =========================================
-   ĐOẠN VĂN MỞ ĐẦU TRANG (PAGE INTRO)
+   12. TEACHING
 ========================================= */
-.page-intro {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #444;            /* Màu xám đen dễ chịu cho mắt */
-    text-align: justify;    /* Căn đều 2 bên chuẩn academic */
-    margin-bottom: 20px;    /* Đẩy Section bên dưới lùi ra xa 40px */
-}
-
-/* (Tùy chọn) Thêm một đường kẻ đứt mờ mờ để ngăn cách intro và nội dung chính */
-.page-intro-divider {
-    border-bottom: 1px dashed #ccc; 
-    padding-bottom: 20px;
-}
-
-/* =========================================
-   GIAO DIỆN TRANG TEACHING (GIẢNG DẠY)
-========================================= */
-
 .teaching-item {
-    margin-bottom: 45px; /* Khoảng cách giữa các môn học */
+    padding: 22px 26px;
+    margin-bottom: 20px;
 }
 
-/* 1. Tên môn học */
 .teaching-title {
-    font-size: 18px !important; /* Kích thước chuẩn Cấp 2, bằng với trang Research */
-    font-weight: bold;
-    color: #4a7298;             /* Màu xanh xám thanh lịch y hệt hình mẫu */
-    margin-top: 0 !important;
-    margin-bottom: 8px !important;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--text);
+    margin: 0 0 10px;
 }
 
-/* 2. Năm giảng dạy (In nghiêng) */
+.course-code {
+    display: inline-block;
+    padding: 2px 10px;
+    margin-right: 2px;
+    border-radius: 6px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    vertical-align: 0.15em;
+}
+
 .teaching-year {
-    font-size: 15px;
+    font-size: 0.92rem;
     font-style: italic;
-    color: #555;                /* Chữ màu xám để phân cấp thông tin */
-    margin-top: 0;
-    margin-bottom: 5px !important;
+    color: var(--text-muted);
+    margin-bottom: 2px;
 }
 
-/* 3. Đoạn văn mô tả môn học */
 .teaching-desc {
-    font-size: 15px;
-    line-height: 1.6;           /* Giãn dòng rộng dễ đọc */
-    color: #333;
-    text-align: justify;        /* Căn đều hai bên vuông vức */
-    margin-top: 3 !important;
+    margin-top: 12px;
+    color: var(--text-muted);
+    text-align: justify;
 }
 
 /* =========================================
-   GIAO DIỆN TRANG GALLERY (THƯ VIỆN ẢNH)
+   13. GALLERY & LIGHTBOX
 ========================================= */
-
 .gallery-grid {
     display: grid;
-    /* Tự động chia cột: mỗi ảnh tối thiểu 250px, nếu màn hình rộng sẽ tự chia thành 2, 3 hoặc 4 cột */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px; /* Khoảng cách giữa các ảnh */
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 22px;
 }
 
 .gallery-item {
-    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Đổ bóng nhẹ */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #fff;
+    cursor: zoom-in;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-/* Hiệu ứng nảy lên và bóng đậm hơn khi di chuột vào ảnh */
 .gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    border-color: var(--accent-ring);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.gallery-media {
+    overflow: hidden;
+    background: var(--bg-soft);
 }
 
 .gallery-img {
     width: 100%;
-    height: 200px; /* Cố định chiều cao để các ảnh luôn bằng nhau */
-    object-fit: cover; /* Cắt cúp ảnh tự động để không bị méo tỷ lệ */
-    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05);
 }
 
 .gallery-caption {
-    padding: 12px 10px;
-    font-size: 14px;
-    color: #555;
+    flex: 1;
+    padding: 14px 16px;
+    border-top: 1px solid var(--border);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 80px;
+    background: rgba(8, 10, 14, 0.92);
+}
+
+.lightbox.is-open {
+    display: flex;
+    animation: fade-in 0.25s ease;
+}
+
+.lightbox-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+}
+
+.lightbox-figure img {
+    max-width: min(1200px, 100%);
+    max-height: 76vh;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+    max-width: 900px;
+    margin-top: 16px;
+    color: #e6e8eb;
+    font-size: 0.95rem;
+    line-height: 1.5;
     text-align: center;
-    font-style: italic;
-    border-top: 1px solid #eee;
+}
+
+.lightbox-btn {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.lightbox-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-close { top: 18px; right: 18px; }
+.lightbox-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 18px; top: 50%; transform: translateY(-50%); }
+
+.lightbox-counter {
+    position: absolute;
+    top: 30px;
+    left: 24px;
+    color: #a7b1bf;
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* =========================================
+   14. CV
+========================================= */
+.cv-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cv-frame {
+    width: 100%;
+    height: 85vh;
+    min-height: 600px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-soft);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.cv-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* =========================================
+   15. MISCELLANEOUS
+========================================= */
+.section > p {
+    color: var(--text-muted);
+    text-align: justify;
+}
+
+.book-list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.book-list li {
+    padding: 14px 18px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text-muted);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-list li:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-sm);
+}
+
+.book-list li b {
+    color: var(--text);
+}
+
+/* =========================================
+   16. SCROLL REVEAL (ONLY WHEN JS IS ON)
+========================================= */
+/* Uses the independent `translate` property so card hover `transform`s still work */
+.js .reveal {
+    opacity: 0;
+    translate: 0 16px;
+    transition: opacity 0.6s ease, translate 0.6s ease, transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.js .reveal.is-visible {
+    opacity: 1;
+    translate: none;
+}
+
+/* =========================================
+   17. RESPONSIVE
+========================================= */
+@media (max-width: 1100px) {
+    .nav-toggle {
+        display: inline-grid;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: var(--header-h);
+        left: 0;
+        right: 0;
+        max-height: 0;
+        overflow: hidden;
+        background: var(--surface);
+        border-bottom: 1px solid transparent;
+        transition: max-height 0.35s ease, border-color 0.35s ease;
+    }
+
+    .nav-menu.is-open {
+        max-height: 520px;
+        border-bottom-color: var(--border);
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        padding: 8px 16px 16px;
+    }
+
+    .nav-menu a {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15.5px;
+    }
+
+    .content {
+        padding: 32px 18px 16px;
+    }
+
+    .section {
+        margin-bottom: 44px;
+    }
+
+    .section-title,
+    .bio-heading {
+        font-size: 1.3rem;
+    }
+
+    .intro-container {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 26px;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .intro-avatar {
+        width: 170px;
+        height: 170px;
+    }
+
+    .hero-name {
+        font-size: 1.9rem;
+    }
+
+    .intro-content .addr {
+        margin-left: 0;
+    }
+
+    .bio-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .bio-right-connect {
+        position: static;
+    }
+
+    .bio-left-content p,
+    .research-intro,
+    .page-intro,
+    .research-project-desc,
+    .research-bullet-list li,
+    .teaching-desc,
+    .section > p {
+        text-align: left;
+    }
+
+    .edu-item {
+        flex-direction: column;
+        gap: 10px;
+        padding: 16px 18px;
+    }
+
+    .news-list.is-enhanced {
+        padding: 4px 16px;
+    }
+
+    .news-list.is-enhanced li {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .pub-item-modern,
+    .award-item {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .pub-number-box,
+    .award-number-box {
+        flex-basis: 30px;
+        height: 30px;
+        font-size: 0.82rem;
+    }
+
+    .pub-search {
+        max-width: none;
+    }
+
+    .research-project {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    .research-project-img {
+        max-width: 420px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .teaching-item {
+        padding: 18px;
+    }
+
+    .lightbox {
+        padding: 64px 12px 90px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        top: auto;
+        bottom: 20px;
+        transform: none;
+    }
+
+    .lightbox-prev { left: calc(50% - 56px); }
+    .lightbox-next { right: calc(50% - 56px); }
+}
+
+@media (max-width: 420px) {
+    .nav-inner {
+        padding: 0 14px;
+        gap: 10px;
+    }
+
+    .brand {
+        font-size: 0.82rem;
+        letter-spacing: 0.01em;
+        gap: 8px;
+    }
+
+    .brand img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .js .reveal {
+        opacity: 1;
+        translate: none;
+    }
+}
+
+@media print {
+    .site-header,
+    .back-to-top,
+    .pub-toolbar,
+    .news-toggle {
+        display: none !important;
+    }
+
+    .news-list.is-enhanced li.is-collapsed {
+        display: grid;
+    }
 }

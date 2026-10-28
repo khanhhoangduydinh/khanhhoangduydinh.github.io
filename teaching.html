@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoang Duy Khanh Dinh's Homepage</title>
-        <meta property="og:title" content="Hoang Duy Khanh Dinh">
+    <meta property="og:title" content="Hoang Duy Khanh Dinh">
     <meta property="og:site_name" content="Hoang Duy Khanh Dinh's Homepage">
     <meta property="og:type" content="website">
     <script type="application/ld+json">
@@ -18,86 +18,90 @@
 
     <link rel="icon" href="Images/avatar.jpg" type="image/jpeg">
     <meta name="google-site-verification" content="ZDkmX-LsKsqk2h9xInR3OyR_mqe6OgUbbP7GpZX4Vbw" />
-    
+
+    <!-- Apply saved (or system) theme before first paint to avoid a flash -->
+    <script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('theme');}catch(e){}if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}d.setAttribute('data-theme',t);d.classList.add('js');})();</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
+    <script src="main.js?v=2" defer></script>
 </head>
 <body>
 
-    <div class="wrapper">
-
-        <header class="sidebar">
-            <div class="sidebar-avatar">
+    <header class="site-header">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">
                 <img src="Images/avatar.jpg" alt="Avatar">
-            </div>
-            <div class="site-title">
-                <a href="index.html">HOANG DUY KHANH, DINH</a>
-            </div>
-            
-            <nav class="nav-menu">
+                <span>HOANG DUY KHANH, DINH</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="cv.html">CV</a></li>
                     <li><a href="research.html">RESEARCH</a></li>
                     <li><a href="publications.html">PUBLICATIONS</a></li>
-                    <li><a href="teaching.html" class="active-menu">TEACHING</a></li>
-                    <li><a href="awards.html">HONORS & AWARDS</a></li>
+                    <li><a href="teaching.html" class="active-menu" aria-current="page">TEACHING</a></li>
+                    <li><a href="awards.html">HONORS &amp; AWARDS</a></li>
                     <li><a href="gallery.html">GALLERY</a></li>
                     <li><a href="miscellaneous.html">MISCELLANEOUS</a></li>
                 </ul>
             </nav>
-
-            <div class="sidebar-footer">
-                <p>&copy; Khanh's personal site. All rights reserved. All opinions, findings, conclusions and recommendations expressed on this site are personal views, and do not reflect the views of any employer or funder.</p>
+            <div class="nav-actions">
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><i class="fa-solid fa-bars"></i></button>
             </div>
-        </header>
+        </div>
+        <div class="progress-bar" id="progress-bar"></div>
+    </header>
 
-<main class="content">
-            
-            <section class="section">
-                <h2 class="section-title">TEACHING EXPERIENCE</h2>
-            
-                <div class="teaching-item">
-                    <h3 class="teaching-title">AS3049 - Fundamentals of Biomechanics</h3>
-                    <p class="teaching-year">Teaching Assistant (TA) - Undergraduate course</p>
-                    <p class="teaching-year">Ho Chi Minh City University of Technology (HCMUT): 01/2026 - 05/2026</p>
-                    <p class="teaching-desc">
-                        This course is designed to enable students to apply principles of mathematics, physics, and mechanics to describe, explain, and analyze mechanical problems within the field of biomechanics. This includes the biomechanics of the musculoskeletal system, as well as the mechanical properties and structural behavior of biological tissues. The module provides a comprehensive overview of musculoskeletal biomechanics, the mechanical properties and structural functions of biological tissues, and the kinesiology of the spine and major joints. Specific course topics include: Structure-function relationships in tissues and organs; Stress and strain analysis of biological tissues; Force analysis during human movement; Biomechanics of the spine and major joints; Energy and power in human activity; Introduction to viscoelastic modeling of tissues.
-                    </p>
-                </div>
+    <main class="content">
 
-                <div class="teaching-item">
-                    <h3 class="teaching-title">PH2003 - Informatics for Engineering Physics</h3>
-                    <p class="teaching-year">Teaching Assistant (TA) - Undergraduate course</p>
-                    <p class="teaching-year">Ho Chi Minh City University of Technology (HCMUT): 09/2025 - 12/2025</p>
-                    <p class="teaching-desc">
-                        This course provides students knowledge of informatics for Engineering Physics. Apply basic scientific knowledge (mathematics, physics, informatics) to understand selected problems of informatics in physics and engineering. Master and apply skills of programming, graphical interpretation, and statistics. Write scientific documents, study literature, present reports and work in groups on topics of informatics for engineering physics. Use computational software, statistics and programming tools to solve specialized problems. Show a comprehensive awareness of Engineering Physics, thereby seeing the useful role of applying knowledge of the course in practice.
-                    </p>
-                </div>
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-chalkboard-user title-icon"></i>TEACHING EXPERIENCE</h2>
 
-                <div class="teaching-item">
-                    <h3 class="teaching-title">SK1001 - Soft Skil: Effective Communication Skills</h3>
-                    <p class="teaching-year">Teaching Assistant (TA) - Undergraduate course</p>
-                    <p class="teaching-year">Ho Chi Minh City University of Technology (HCMUT): 09/2024 - 12/2024</p>
-                    <p class="teaching-desc">
-                        This course is designed for students in technology and engineering disciplines, aiming to equip them with foundational knowledge of communication and practical skills applicable in academic and professional world.  The curriculum includes communication theoretical concepts and hands-on practice, enabling students not only to understand the nature of communication, its influencing factors but also to apply these skills flexibly in academic and professional world. Introducing psychological and communication foundation theories, the specific characteristics of communication of engineering students. Focusing on developing offline and online communication skills in the digital age, including resolving conflicts and developing communication in multicultural and interdisciplinary settings, as well as building professional communication styles. By completing this course, students will be able to communicate clearly and contextually, collaborate effectively in teams, build their professional image in different contexts across academic and workplace.
-                    </p>
-                </div>
-                
-                </section>
-            
-            <div style="margin-top: 60px; margin-bottom: 20px;">
-                <p class="caption">There is no prize to perfection … only an end to pursuit</p>
-                <p class="caption caption-divider">- Viktor (Arcane Season 2) -</p>
+            <div class="teaching-item">
+                <h3 class="teaching-title"><span class="course-code">AS3049</span> Fundamentals of Biomechanics</h3>
+                <p class="teaching-year">Teaching Assistant (TA) - Undergraduate course</p>
+                <p class="teaching-year">Ho Chi Minh City University of Technology (HCMUT): 01/2026 - 05/2026</p>
+                <p class="teaching-desc">
+                    This course is designed to enable students to apply principles of mathematics, physics, and mechanics to describe, explain, and analyze mechanical problems within the field of biomechanics. This includes the biomechanics of the musculoskeletal system, as well as the mechanical properties and structural behavior of biological tissues. The module provides a comprehensive overview of musculoskeletal biomechanics, the mechanical properties and structural functions of biological tissues, and the kinesiology of the spine and major joints. Specific course topics include: Structure-function relationships in tissues and organs; Stress and strain analysis of biological tissues; Force analysis during human movement; Biomechanics of the spine and major joints; Energy and power in human activity; Introduction to viscoelastic modeling of tissues.
+                </p>
             </div>
-            
-         </main>
-    </div>
+
+            <div class="teaching-item">
+                <h3 class="teaching-title"><span class="course-code">PH2003</span> Informatics for Engineering Physics</h3>
+                <p class="teaching-year">Teaching Assistant (TA) - Undergraduate course</p>
+                <p class="teaching-year">Ho Chi Minh City University of Technology (HCMUT): 09/2025 - 12/2025</p>
+                <p class="teaching-desc">
+                    This course provides students knowledge of informatics for Engineering Physics. Apply basic scientific knowledge (mathematics, physics, informatics) to understand selected problems of informatics in physics and engineering. Master and apply skills of programming, graphical interpretation, and statistics. Write scientific documents, study literature, present reports and work in groups on topics of informatics for engineering physics. Use computational software, statistics and programming tools to solve specialized problems. Show a comprehensive awareness of Engineering Physics, thereby seeing the useful role of applying knowledge of the course in practice.
+                </p>
+            </div>
+
+            <div class="teaching-item">
+                <h3 class="teaching-title"><span class="course-code">SK1001</span> Soft Skil: Effective Communication Skills</h3>
+                <p class="teaching-year">Teaching Assistant (TA) - Undergraduate course</p>
+                <p class="teaching-year">Ho Chi Minh City University of Technology (HCMUT): 09/2024 - 12/2024</p>
+                <p class="teaching-desc">
+                    This course is designed for students in technology and engineering disciplines, aiming to equip them with foundational knowledge of communication and practical skills applicable in academic and professional world.  The curriculum includes communication theoretical concepts and hands-on practice, enabling students not only to understand the nature of communication, its influencing factors but also to apply these skills flexibly in academic and professional world. Introducing psychological and communication foundation theories, the specific characteristics of communication of engineering students. Focusing on developing offline and online communication skills in the digital age, including resolving conflicts and developing communication in multicultural and interdisciplinary settings, as well as building professional communication styles. By completing this course, students will be able to communicate clearly and contextually, collaborate effectively in teams, build their professional image in different contexts across academic and workplace.
+                </p>
+            </div>
+
+        </section>
+
+        <div class="page-quote">
+            <p class="caption">There is no prize to perfection … only an end to pursuit</p>
+            <p class="caption caption-divider">- Viktor (Arcane Season 2) -</p>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; Khanh's personal site. All rights reserved. All opinions, findings, conclusions and recommendations expressed on this site are personal views, and do not reflect the views of any employer or funder.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
-
-
-
-
-

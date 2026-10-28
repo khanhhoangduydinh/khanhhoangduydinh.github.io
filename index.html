@@ -1,6 +1,8 @@
-    <!DOCTYPE html>
-<html lang="vi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoang Duy Khanh Dinh's Homepage</title>
     <meta property="og:title" content="Hoang Duy Khanh Dinh">
     <meta property="og:site_name" content="Hoang Duy Khanh Dinh's Homepage">
@@ -16,128 +18,136 @@
 
     <link rel="icon" href="Images/avatar.jpg" type="image/jpeg">
     <meta name="google-site-verification" content="ZDkmX-LsKsqk2h9xInR3OyR_mqe6OgUbbP7GpZX4Vbw" />
-    
+
+    <!-- Apply saved (or system) theme before first paint to avoid a flash -->
+    <script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('theme');}catch(e){}if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}d.setAttribute('data-theme',t);d.classList.add('js');})();</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
+    <script src="main.js?v=2" defer></script>
 </head>
 <body>
 
-    <div class="wrapper">
-
-        <header class="sidebar">
-            <div class="sidebar-avatar">
+    <header class="site-header">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">
                 <img src="Images/avatar.jpg" alt="Avatar">
-            </div>
-            <div class="site-title">
-                <a href="index.html">HOANG DUY KHANH, DINH</a>
-            </div>
-            
-            <nav class="nav-menu">
+                <span>HOANG DUY KHANH, DINH</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
                 <ul>
-                    <li><a href="index.html" class="active-menu">HOME</a></li>
+                    <li><a href="index.html" class="active-menu" aria-current="page">HOME</a></li>
                     <li><a href="cv.html">CV</a></li>
                     <li><a href="research.html">RESEARCH</a></li>
                     <li><a href="publications.html">PUBLICATIONS</a></li>
                     <li><a href="teaching.html">TEACHING</a></li>
-                    <li><a href="awards.html">HONORS & AWARDS</a></li>
+                    <li><a href="awards.html">HONORS &amp; AWARDS</a></li>
                     <li><a href="gallery.html">GALLERY</a></li>
                     <li><a href="miscellaneous.html">MISCELLANEOUS</a></li>
                 </ul>
             </nav>
-
-            <div class="sidebar-footer">
-                <p>&copy; Khanh's personal site. All rights reserved. All opinions, findings, conclusions and recommendations expressed on this site are personal views, and do not reflect the views of any employer or funder.</p>
+            <div class="nav-actions">
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><i class="fa-solid fa-bars"></i></button>
             </div>
-        </header>
+        </div>
+        <div class="progress-bar" id="progress-bar"></div>
+    </header>
 
-<main class="content">
-            
-            <section id="home" class="section">
-                <h2 class="intro-title"><b>INTRODUCTION</b></h2>
-                <div class="intro-container">
-                    <div class="intro-avatar">
-                        <img src="Images/Ava.jpg" alt="Avatar">
-                    </div>
-                    <div class="intro-content">
-                        <p><b>Dinh Hoang Duy Khanh</b> - <i>Master Student (MSc.)</i></p>
-                        <p><a href="https://fas.hcmut.edu.vn/"> Faculty of Applied Science (FAS)</a> & <a href="https://cse.hcmut.edu.vn/"> Faculty of Computer Science and Engineering (CSE)</a></p>
-                        <p><a href="https://hcmut.edu.vn/en"> Ho Chi Minh City University of Technology (HCMUT)</a></p>
-                        <p><i>(268 Ly Thuong Kiet Street, Dien Hong Ward, Ho Chi Minh City, Vietnam)</i></p>
-                        <p><a href="https://vnuhcm.edu.vn/en"> Vietnam National University - Ho Chi Minh City (VNU-HCM)</a></p>
-                        <p><i>(Vo Truong Toan Street, Quarter 33, Linh Xuan Ward, Ho Chi Minh City, Vietnam)</i></p>
+    <main class="content">
 
-                        <p style="margin-top: 25px;">
-                            Email: <a href="mailto:khanh.dinhhoangduy@hcmut.edu.vn">khanh (DOT) dinhhoangduy (AT) hcmut (DOT) edu (DOT) vn</a>
+        <section id="home" class="section">
+            <h2 class="section-title intro-title"><i class="fa-solid fa-id-card title-icon"></i><b>INTRODUCTION</b></h2>
+            <div class="intro-container">
+                <div class="intro-avatar">
+                    <img src="Images/Ava.jpg" alt="Avatar">
+                </div>
+                <div class="intro-content">
+                    <h1 class="hero-name">Dinh Hoang Duy Khanh</h1>
+                    <p class="hero-role"><i>Master Student (MSc.)</i></p>
+                    <p><i class="fa-solid fa-flask icon"></i><a href="https://fas.hcmut.edu.vn/"> Faculty of Applied Science (FAS)</a> &amp; <a href="https://cse.hcmut.edu.vn/"> Faculty of Computer Science and Engineering (CSE)</a></p>
+                    <p><i class="fa-solid fa-building-columns icon"></i><a href="https://hcmut.edu.vn/en"> Ho Chi Minh City University of Technology (HCMUT)</a></p>
+                    <p class="addr"><i>(268 Ly Thuong Kiet Street, Dien Hong Ward, Ho Chi Minh City, Vietnam)</i></p>
+                    <p><i class="fa-solid fa-landmark icon"></i><a href="https://vnuhcm.edu.vn/en"> Vietnam National University - Ho Chi Minh City (VNU-HCM)</a></p>
+                    <p class="addr"><i>(Vo Truong Toan Street, Quarter 33, Linh Xuan Ward, Ho Chi Minh City, Vietnam)</i></p>
+
+                    <div class="contact-list">
+                        <p>
+                            <i class="fa-solid fa-envelope icon"></i>Email: <a href="mailto:khanh.dinhhoangduy@hcmut.edu.vn">khanh (DOT) dinhhoangduy (AT) hcmut (DOT) edu (DOT) vn</a>
+                            <button class="copy-btn" data-copy="khanh.dinhhoangduy@hcmut.edu.vn" aria-label="Copy email address" title="Copy email address"><i class="fa-regular fa-copy"></i></button>
                         </p>
-                        <p>Phone: (+84) 981-863-824</p>
+                        <p><i class="fa-solid fa-phone icon"></i>Phone: (+84) 981-863-824</p>
                     </div>
                 </div>
-            </section>
-            
-            <section id="biography" class="section">          
-                <div class="bio-container">
-                    <div class="bio-left-content">
-                        <h3 class="bio-heading"><b>BIOGRAPHY</b></h3>
-                        <p>
-                            Welcome! I am currently a graduate student and researcher of Research-intensive Master Program in Engineering Physics, with a specialization in Biomedical Engineering and Research Master Program in Computer Science at <a href="https://hcmut.edu.vn/en">HCMUT</a> - <a href="https://vnuhcm.edu.vn/en"> VNU-HCM</a>. 
-                            I completed the English-taught Undergraduate Program in Engineering Physics at <a href="https://hcmut.edu.vn/en">HCMUT</a> - <a href="https://vnuhcm.edu.vn/en"> VNU-HCM</a> (2021-2025) under the supervision of <a href="https://fas.hcmut.edu.vn/personnel/nhanguyen">Assoc. Prof. Nguyen Thanh Nha</a>
-                            and <a href="https://fas.hcmut.edu.vn/personnel/ttnghia">Assoc. Prof. Tran Trung Nghia</a>. In 2026, I am continuing to conduct research and work on my master thesis with  <a href="https://scholar.google.com.vn/citations?user=V-UZo0kAAAAJ&hl=en">Assoc. Prof. Tran Van Hoai</a>.
-                        </p>
-                                    
-                        <p>
-                            <b>Objective: Seeking PhD opportunities in Computer Science / Computational Mathematics / Physics in advanced countries around the world and participating in collaborative scientific research.</b>
-                        </p>
-                        
-                        <h3 class="bio-heading" style="margin-top: 30px !important;"><b>RESEARCH INTERESTS</b></h3>
-                        <p>
-                            My research interests lie at the intersection of <a href="https://en.wikipedia.org/wiki/Computational_neuroscience">Computational Neuroscience</a>, <a href="https://en.wikipedia.org/wiki/Numerical_analysis">Numerical Analysis</a>, 
-                            <a href="https://en.wikipedia.org/wiki/Computational_physics">Computational Physics</a> and <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">Artificial Intelligence (AI)</a> in <a href="https://en.wikipedia.org/wiki/Biomedical_engineering">Biomedical Engineering</a>. 
-                                I focus on <a href="https://en.wikipedia.org/wiki/Biosignal">Biosignal</a>: <a href="https://en.wikipedia.org/wiki/Electroencephalogram">Electroencephalogram (EEG)</a> & <a href="https://en.wikipedia.org/wiki/Electromyography">Electromyography (EMG)</a>, 
-                                <a href="https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface">Brain-Computer Interface (BCI)</a>, <a href="https://en.wikipedia.org/wiki/Biomechanics">Biomechanics</a>, numerical meshfree methods in simulating mathematical models of soft tissues, bone remodeling algorithms, 
-                                statistical modeling of neural codes and perceptual computation and decoding of human brain dynamics.
-                        </p>
-            
-                        <p>
-                            Besides my scientific research, I also assist in teaching programming courses and general subjects. I enjoy reading about astrophysics, cosmology, science fiction, light novels; listening to US-UK, K-pop, V-pop music; and learning new things.
-                        </p>
-                    </div> 
-                    
-                    <div class="bio-right-connect">
-                        <h3 class="bio-heading"><b>CONNECT</b></h3>
-                        <div class="social-links-list">
-                            <a href="https://www.linkedin.com/in/dinhhoangduykhanh2003/" target="_blank" class="social-item">
-                                <i class="fab fa-linkedin" style="color: #0a66c2;"></i> LinkedIn
-                            </a>
-                            <a href="https://github.com/khanhhoangduydinh" target="_blank" class="social-item">
-                                <i class="fab fa-github" style="color: #181717;"></i> GitHub
-                            </a>
-                            <a href="https://scholar.google.com/citations?user=mZ0qwZYAAAAJ&hl=vi&oi=ao" target="_blank" class="social-item">
-                                <i class="fab fa-google-scholar" style="color: #4285f4;"></i> Google Scholar
-                            </a>
-                             <a href="https://orcid.org/0009-0006-5707-9161" target="_blank" class="social-item">
-                                <i class="fab fa-orcid" style="color: #A6CE39;"></i> ORCiD
-                            </a>
-                            <a href="https://www.researchgate.net/profile/Duy-Khanh-Dinh-Hoang?ev=hdr_xprf" target="_blank" class="social-item">
-                                <i class="fab fa-researchgate" style="color: #00ccbb;"></i> ResearchGate
-                            </a>
-                        </div>
-                    </div> 
+            </div>
+        </section>
+
+        <section id="biography" class="section">
+            <div class="bio-container">
+                <div class="bio-left-content">
+                    <h3 class="bio-heading"><i class="fa-solid fa-user title-icon"></i><b>BIOGRAPHY</b></h3>
+                    <p>
+                        Welcome! I am currently a graduate student and researcher of Research-intensive Master Program in Engineering Physics, with a specialization in Biomedical Engineering and Research Master Program in Computer Science at <a href="https://hcmut.edu.vn/en">HCMUT</a> - <a href="https://vnuhcm.edu.vn/en"> VNU-HCM</a>.
+                        I completed the English-taught Undergraduate Program in Engineering Physics at <a href="https://hcmut.edu.vn/en">HCMUT</a> - <a href="https://vnuhcm.edu.vn/en"> VNU-HCM</a> (2021-2025) under the supervision of <a href="https://fas.hcmut.edu.vn/personnel/nhanguyen">Assoc. Prof. Nguyen Thanh Nha</a>
+                        and <a href="https://fas.hcmut.edu.vn/personnel/ttnghia">Assoc. Prof. Tran Trung Nghia</a>. In 2026, I am continuing to conduct research and work on my master thesis with  <a href="https://scholar.google.com.vn/citations?user=V-UZo0kAAAAJ&amp;hl=en">Assoc. Prof. Tran Van Hoai</a>.
+                    </p>
+
+                    <p class="callout">
+                        <b>Objective: Seeking PhD opportunities in Computer Science / Computational Mathematics / Physics in advanced countries around the world and participating in collaborative scientific research.</b>
+                    </p>
+
+                    <h3 class="bio-heading spaced"><i class="fa-solid fa-lightbulb title-icon"></i><b>RESEARCH INTERESTS</b></h3>
+                    <p>
+                        My research interests lie at the intersection of <a href="https://en.wikipedia.org/wiki/Computational_neuroscience">Computational Neuroscience</a>, <a href="https://en.wikipedia.org/wiki/Numerical_analysis">Numerical Analysis</a>,
+                        <a href="https://en.wikipedia.org/wiki/Computational_physics">Computational Physics</a> and <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">Artificial Intelligence (AI)</a> in <a href="https://en.wikipedia.org/wiki/Biomedical_engineering">Biomedical Engineering</a>.
+                            I focus on <a href="https://en.wikipedia.org/wiki/Biosignal">Biosignal</a>: <a href="https://en.wikipedia.org/wiki/Electroencephalogram">Electroencephalogram (EEG)</a> &amp; <a href="https://en.wikipedia.org/wiki/Electromyography">Electromyography (EMG)</a>,
+                            <a href="https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface">Brain-Computer Interface (BCI)</a>, <a href="https://en.wikipedia.org/wiki/Biomechanics">Biomechanics</a>, numerical meshfree methods in simulating mathematical models of soft tissues, bone remodeling algorithms,
+                            statistical modeling of neural codes and perceptual computation and decoding of human brain dynamics.
+                    </p>
+
+                    <p>
+                        Besides my scientific research, I also assist in teaching programming courses and general subjects. I enjoy reading about astrophysics, cosmology, science fiction, light novels; listening to US-UK, K-pop, V-pop music; and learning new things.
+                    </p>
                 </div>
-            </section>
-            
-            <section id="education" class="section">
-                <h2 class="section-title">EDUCATION</h2>
-                
+
+                <aside class="bio-right-connect">
+                    <h3 class="bio-heading"><i class="fa-solid fa-link title-icon"></i><b>CONNECT</b></h3>
+                    <div class="social-links-list">
+                        <a href="https://www.linkedin.com/in/dinhhoangduykhanh2003/" target="_blank" rel="noopener" class="social-item">
+                            <i class="fab fa-linkedin brand-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/khanhhoangduydinh" target="_blank" rel="noopener" class="social-item">
+                            <i class="fab fa-github brand-github"></i> GitHub
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=mZ0qwZYAAAAJ&amp;hl=vi&amp;oi=ao" target="_blank" rel="noopener" class="social-item">
+                            <i class="fab fa-google-scholar brand-scholar"></i> Google Scholar
+                        </a>
+                        <a href="https://orcid.org/0009-0006-5707-9161" target="_blank" rel="noopener" class="social-item">
+                            <i class="fab fa-orcid brand-orcid"></i> ORCiD
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Duy-Khanh-Dinh-Hoang?ev=hdr_xprf" target="_blank" rel="noopener" class="social-item">
+                            <i class="fab fa-researchgate brand-researchgate"></i> ResearchGate
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2 class="section-title"><i class="fa-solid fa-graduation-cap title-icon"></i>EDUCATION</h2>
+
+            <div class="timeline">
                 <div class="edu-item">
                     <div class="edu-info">
                         <h4>M.Eng. Computer Science</h4>
                         <p class="edu-school">HCMUT - VNU-HCM</p>
-                        <p class="edu-desc">
-                        </p>
+                        <p class="edu-desc"></p>
                         <div class="edu-desc advisor-wrapper">
                             <span class="advisor-label"><b>Advisors:</b></span>
                             <span class="advisor-names">
-                            <a href="https://scholar.google.com.vn/citations?user=V-UZo0kAAAAJ&hl=en">Assoc. Prof. Tran Van Hoai</a> & <a href="https://fas.hcmut.edu.vn/personnel/nhanguyen">Assoc. Prof. Nguyen Thanh Nha</a>.
+                            <a href="https://scholar.google.com.vn/citations?user=V-UZo0kAAAAJ&amp;hl=en">Assoc. Prof. Tran Van Hoai</a> &amp; <a href="https://fas.hcmut.edu.vn/personnel/nhanguyen">Assoc. Prof. Nguyen Thanh Nha</a>.
                             </span>
                         </div>
                     </div>
@@ -145,7 +155,7 @@
                         Sep 2026 -- Nov 2027 <br> (Expected)
                     </div>
                 </div>
-                
+
                 <div class="edu-item">
                     <div class="edu-info">
                         <h4>M.Eng. Engineering Physics</h4>
@@ -156,7 +166,7 @@
                         <div class="edu-desc advisor-wrapper">
                             <span class="advisor-label"><b>Advisors:</b></span>
                             <span class="advisor-names">
-                            <a href="https://fas.hcmut.edu.vn/personnel/nhanguyen">Assoc. Prof. Nguyen Thanh Nha</a> & <a href="https://fas.hcmut.edu.vn/personnel/ttnghia">Assoc. Prof. Tran Trung Nghia</a>
+                            <a href="https://fas.hcmut.edu.vn/personnel/nhanguyen">Assoc. Prof. Nguyen Thanh Nha</a> &amp; <a href="https://fas.hcmut.edu.vn/personnel/ttnghia">Assoc. Prof. Tran Trung Nghia</a>
                             </span>
                         </div>
                     </div>
@@ -164,7 +174,7 @@
                         Jan 2026 -- April 2027 <br> (Expected)
                     </div>
                 </div>
-                
+
                 <div class="edu-item">
                     <div class="edu-info">
                         <h4>B.Eng. Engineering Physics (specialty of Biomedical Engineering)</h4>
@@ -175,7 +185,7 @@
                         <div class="edu-desc advisor-wrapper">
                             <span class="advisor-label"><b>Advisors:</b></span>
                             <span class="advisor-names">
-                            <a href="https://fas.hcmut.edu.vn/personnel/nhanguyen">Assoc. Prof. Nguyen Thanh Nha</a> & <a href="https://fas.hcmut.edu.vn/personnel/ttnghia">Assoc. Prof. Tran Trung Nghia</a>
+                            <a href="https://fas.hcmut.edu.vn/personnel/nhanguyen">Assoc. Prof. Nguyen Thanh Nha</a> &amp; <a href="https://fas.hcmut.edu.vn/personnel/ttnghia">Assoc. Prof. Tran Trung Nghia</a>
                             </span>
                         </div>
                     </div>
@@ -183,11 +193,13 @@
                         Sep 2021 -- July 2025
                     </div>
                 </div>
-            </section>
-            
-            <section id="industry" class="section">
-                <h2 class="section-title">INDUSTRY EXPERIENCES</h2>
-                
+            </div>
+        </section>
+
+        <section id="industry" class="section">
+            <h2 class="section-title"><i class="fa-solid fa-briefcase title-icon"></i>INDUSTRY EXPERIENCES</h2>
+
+            <div class="timeline">
                 <div class="edu-item">
                     <div class="edu-info">
                         <h4><a href="https://www.mitalab.com/">Branch of Mitalab Co.,Ltd</a></h4>
@@ -198,7 +210,7 @@
                         Sep 2024 -- Aug 2025
                     </div>
                 </div>
-                
+
                 <div class="edu-item">
                     <div class="edu-info">
                         <h4><a href="https://benhviendakhoadongnai.com/">Dong Nai General Hospital</a></h4>
@@ -209,35 +221,28 @@
                         June 2024 -- Aug 2024
                     </div>
                 </div>
-            </section>
-            
-            <section id="news" class="section">          
-                <h2 class="section-title">NEWS</h2>
-                <div id="news-container">
-                    <p><i>Loading news...</i></p>
-                </div>
-            </section>
-            
-            <div style="margin-top: 60px; margin-bottom: 20px;">
-                <p class="caption">A story that begins with love must also end with love</p>
-                <p class="caption caption-divider">- Cyrene (Honkai: Star Rail) -</p>
             </div>
-            
-        </main>
-    </div>
-<script>
-        // Lệnh fetch sẽ gọi file news.html và nhét vào cái hộp news-container
-        fetch('news.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('news-container').innerHTML = data;
-            })
-            .catch(error => {
-                document.getElementById('news-container').innerHTML = "<p>Error loading news.</p>";
-                console.error('Error fetching news:', error);
-            });
-    </script>
+        </section>
+
+        <section id="news" class="section">
+            <h2 class="section-title"><i class="fa-solid fa-newspaper title-icon"></i>NEWS</h2>
+            <div id="news-container">
+                <p><i>Loading news...</i></p>
+            </div>
+        </section>
+
+        <div class="page-quote">
+            <p class="caption">A story that begins with love must also end with love</p>
+            <p class="caption caption-divider">- Cyrene (Honkai: Star Rail) -</p>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; Khanh's personal site. All rights reserved. All opinions, findings, conclusions and recommendations expressed on this site are personal views, and do not reflect the views of any employer or funder.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
-
-

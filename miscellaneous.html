@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,92 +18,99 @@
 
     <link rel="icon" href="Images/avatar.jpg" type="image/jpeg">
     <meta name="google-site-verification" content="ZDkmX-LsKsqk2h9xInR3OyR_mqe6OgUbbP7GpZX4Vbw" />
-    
+
+    <!-- Apply saved (or system) theme before first paint to avoid a flash -->
+    <script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('theme');}catch(e){}if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}d.setAttribute('data-theme',t);d.classList.add('js');})();</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
+    <script src="main.js?v=2" defer></script>
 </head>
 <body>
 
-    <div class="wrapper">
-
-        <header class="sidebar">
-            <div class="sidebar-avatar">
+    <header class="site-header">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">
                 <img src="Images/avatar.jpg" alt="Avatar">
-            </div>
-            <div class="site-title">
-                <a href="index.html">HOANG DUY KHANH, DINH</a>
-            </div>
-            
-            <nav class="nav-menu">
+                <span>HOANG DUY KHANH, DINH</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="cv.html">CV</a></li>
                     <li><a href="research.html">RESEARCH</a></li>
                     <li><a href="publications.html">PUBLICATIONS</a></li>
                     <li><a href="teaching.html">TEACHING</a></li>
-                    <li><a href="awards.html">HONORS & AWARDS</a></li>
+                    <li><a href="awards.html">HONORS &amp; AWARDS</a></li>
                     <li><a href="gallery.html">GALLERY</a></li>
-                    <li><a href="miscellaneous.html" class="active-menu">MISCELLANEOUS</a></li>
+                    <li><a href="miscellaneous.html" class="active-menu" aria-current="page">MISCELLANEOUS</a></li>
                 </ul>
             </nav>
-
-            <div class="sidebar-footer">
-                <p>&copy; KDHD2026</p>
+            <div class="nav-actions">
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><i class="fa-solid fa-bars"></i></button>
             </div>
-        </header>
+        </div>
+        <div class="progress-bar" id="progress-bar"></div>
+    </header>
 
-<main class="content">
-<div class="page-intro page-intro-divider">
-                <p>
-                    Welcome to my personal corner! Beyond the hours immersed in research and academia, I always make time for everyday passions to keep things balanced. Here are a few other pieces of my puzzle that you might find interesting about me ^^
-                </p>
-            </div>
-            <section class="section">
-                <h2 class="section-title">READING</h2>
-                    <p>
-                        I spend a large amount of my free time reading. I enjoy reading about astrophysics, cosmology, science fiction, mystery thriller novel and light novels. Below are a few of my all-time favorite books:
-                    </p>
-                    <ul style="margin-top: 15px; margin-left: 20px; list-style-type: square;">
-                        <li style="margin-bottom: 10px;">
-                            <b>"A Brief History of Time: From the Big Bang to Black Holes"</b> - <i>Stephen Hawking</i>: 10/10 brilliant book. Did I understand every single aspect of it? Absolutely not. My brain simply doesn't have the RAM. I'd have to read it a dozen more times just to pretend I grasp all the interdisciplinary dots it connects.
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <b>"An Introduction to Modern Astrophysics"</b> - <i>Bradley W. Carroll & Dale A. Ostlie</i>: I affectionately call it 'the orange book.' A friend in the US recommended it when I wanted to dip my toes into astrophysics, and apparently, it's the ultimate bedside bible for students in the field. It is a completely brilliant book.
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <b>"The Da Vinci Code"</b> - <i>Dan Brown</i>: It's a total masterpiece of the thriller genre! Dan Brown really struck gold with the formula for that book. The way he blends art history, cryptography, and secret societies into such a high-stakes, 24-hour treasure hunt is incredibly gripping.
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <b>"5 Centimeters per Second"</b> - <i>Makoto Shinkai</i>: This story is deeply emotional and touches on aspects of life that resonated profoundly with me. As fans of the anime or manga will know, it beautifully captures the bittersweet reality of outgrowing past romances and the quiet heartbreak of trying to navigate a long-distance relationship.
-                        </li>
-                    </ul>
-            </section>
+    <main class="content">
 
-                <section class="section">
-                <h2 class="section-title">MUSIC</h2>
-                    <p>
-                        I play guitar, organ, and sing. I enjoy listening to a large variety of music, mostly progressive of various styles like EDM, pop, R&B. I love singing these specific genres because they are incredibly forgiving to my vocal abilities. Truthfully, my entire academic career is just a backup plan until my world tour kicks off.
-                    </p>
-            </section>
+        <div class="page-intro page-intro-divider">
+            <p>
+                Welcome to my personal corner! Beyond the hours immersed in research and academia, I always make time for everyday passions to keep things balanced. Here are a few other pieces of my puzzle that you might find interesting about me ^^
+            </p>
+        </div>
 
-                    <section class="section">
-                <h2 class="section-title">GAMING</h2>
-                    <p>
-                        I’m an avid gamer. I prefer the absolute chaos of League of Legends (LOL), Teamfight Tactis (TFT), and League of Lengends: Wild Rift. As a Lissandra main who flexes Mid and Support, my main goals in life are to crowd-control the enemy team and desperately try to keep my ADC alive. Feel free to analyze my match data <a href="https://www.leagueofgraphs.com/summoner/vn/Kasper+The+Fake-0301#championsData-ranked">here</a> (please judge gently).
-                    </p>
-            </section>
-            <div style="margin-top: 60px; margin-bottom: 20px;">
-                <p class="caption">If this night is not forever. At least we are together. I know I'm not alone</p>
-                <p class="caption caption-divider">- Alan Walker (Alone, 2016) -</p>
-            </div>
-            
-         </main>
-    </div>
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-book title-icon"></i>READING</h2>
+            <p>
+                I spend a large amount of my free time reading. I enjoy reading about astrophysics, cosmology, science fiction, mystery thriller novel and light novels. Below are a few of my all-time favorite books:
+            </p>
+            <ul class="book-list">
+                <li>
+                    <b>"A Brief History of Time: From the Big Bang to Black Holes"</b> - <i>Stephen Hawking</i>: 10/10 brilliant book. Did I understand every single aspect of it? Absolutely not. My brain simply doesn't have the RAM. I'd have to read it a dozen more times just to pretend I grasp all the interdisciplinary dots it connects.
+                </li>
+                <li>
+                    <b>"An Introduction to Modern Astrophysics"</b> - <i>Bradley W. Carroll &amp; Dale A. Ostlie</i>: I affectionately call it 'the orange book.' A friend in the US recommended it when I wanted to dip my toes into astrophysics, and apparently, it's the ultimate bedside bible for students in the field. It is a completely brilliant book.
+                </li>
+                <li>
+                    <b>"The Da Vinci Code"</b> - <i>Dan Brown</i>: It's a total masterpiece of the thriller genre! Dan Brown really struck gold with the formula for that book. The way he blends art history, cryptography, and secret societies into such a high-stakes, 24-hour treasure hunt is incredibly gripping.
+                </li>
+                <li>
+                    <b>"5 Centimeters per Second"</b> - <i>Makoto Shinkai</i>: This story is deeply emotional and touches on aspects of life that resonated profoundly with me. As fans of the anime or manga will know, it beautifully captures the bittersweet reality of outgrowing past romances and the quiet heartbreak of trying to navigate a long-distance relationship.
+                </li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-music title-icon"></i>MUSIC</h2>
+            <p>
+                I play guitar, organ, and sing. I enjoy listening to a large variety of music, mostly progressive of various styles like EDM, pop, R&amp;B. I love singing these specific genres because they are incredibly forgiving to my vocal abilities. Truthfully, my entire academic career is just a backup plan until my world tour kicks off.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-gamepad title-icon"></i>GAMING</h2>
+            <p>
+                I’m an avid gamer. I prefer the absolute chaos of League of Legends (LOL), Teamfight Tactis (TFT), and League of Lengends: Wild Rift. As a Lissandra main who flexes Mid and Support, my main goals in life are to crowd-control the enemy team and desperately try to keep my ADC alive. Feel free to analyze my match data <a href="https://www.leagueofgraphs.com/summoner/vn/Kasper+The+Fake-0301#championsData-ranked" target="_blank" rel="noopener">here <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.8em"></i></a> (please judge gently).
+            </p>
+        </section>
+
+        <div class="page-quote">
+            <p class="caption">If this night is not forever. At least we are together. I know I'm not alone</p>
+            <p class="caption caption-divider">- Alan Walker (Alone, 2016) -</p>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; KDHD2026</p>
+        </div>
+    </footer>
 
 </body>
 </html>
-
-
-
-
-
