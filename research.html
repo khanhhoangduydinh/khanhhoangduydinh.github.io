@@ -68,17 +68,44 @@
 
             <div class="research-project">
                 <div class="research-project-img">
-                    <img src="Images/BCI.png" alt="Brain-Computer Interface" loading="lazy" decoding="async">
+                    <div class="research-img-wrapper">
+                        <img src="Images/BCI.png" alt="Brain-Computer Interface Architecture" loading="lazy" decoding="async">
+                        <div class="research-img-caption">EEG feature extraction &amp; encrypted inference pipeline</div>
+                    </div>
                 </div>
                 <div class="research-project-content">
+                    <div class="pub-badge-row">
+                        <span class="pub-badge pub-badge--journal"><i class="fa-solid fa-brain"></i> EEG &amp; BCI</span>
+                        <span class="pub-badge pub-badge--conference"><i class="fa-solid fa-network-wired"></i> Deep Learning</span>
+                        <span class="pub-badge pub-badge--metric"><i class="fa-solid fa-lock"></i> Homomorphic Encryption</span>
+                        <span class="pub-badge pub-badge--topic">Signal Processing</span>
+                    </div>
                     <h3 class="research-project-title">Feature Extraction in EEG Signals and Brain-Computer Interfaces</h3>
                     <div class="research-project-desc">
                         <p>
-                            Brain-Computer Interfaces (BCIs) translate brain activity into computer commands, showing great promise in neurorehabilitation. We studied the labeling, feature extraction, classification, and encryption of EEG biological signals. Machine learning and deep learning techniques were applied to understand each EEG signal activity using reliable data from Physionet and laboratory. Future research will delve deeper into analyzing EEG brainwave data to support the classification of human activity dynamics and the application of BCIs in biomedical engineering.
+                            Brain-Computer Interfaces (BCIs) translate electroencephalogram (EEG) signals into computational commands for neurorehabilitation and assistive robotics. We develop machine learning pipelines (Bi-LSTM, Transformers) for P300 event detection and activity recognition, integrated with Paillier homomorphic encryption to ensure patient neural privacy during cloud computing.
                         </p>
                         <ul class="research-bullet-list">
-                            <li><b>Mathematical models:</b> Artificial neural networks (ANN), decision trees, random forest regression, support-vector machines, regression analysis, bayesian networks,...</li>
-                            <li><b>Homomorphic encryption:</b> Ciphertexts preserve algebraic structure so that operations can be executed without revealing the underlying plaintexts, using the Paillier cryptosystem allows two types of computation: addition of two ciphertexts &amp; multiplication of a ciphertext by a plaintext number.</li>
+                            <li><b>Deep Learning Architectures:</b> LOSO-validated Bi-LSTM and self-attention Transformer networks for robust temporal EEG decoding and artifact rejection.</li>
+                            <li><b>Homomorphic Encryption:</b> Paillier additive cryptosystem enabling encrypted signal classification without exposing raw brain dynamics.</li>
+                        </ul>
+                    </div>
+
+                    <div class="research-related-papers">
+                        <h4 class="research-related-title"><i class="fa-solid fa-file-lines"></i> Related Publications &amp; Projects</h4>
+                        <ul class="research-paper-list">
+                            <li class="research-paper-item">
+                                <a href="https://iopscience.iop.org/article/10.1088/1742-6596/3180/1/012008" target="_blank" rel="noopener">Leave-One-Subject-Out (LOSO)-Validated Ensemble of Bi-LSTM and Transformer Models for Unusual Activity Detection</a>
+                                <span class="paper-venue">Journal of Physics: Conference Series (IOP Publishing), 2026.</span>
+                            </li>
+                            <li class="research-paper-item">
+                                <a href="https://eureka.khoahoctre.com.vn/" target="_blank" rel="noopener">Secure Brain-Computer Interfaces with Homomorphic Encryption: A Case Study on Electroencephalogram Based P300 Classification</a>
+                                <span class="paper-venue">27th Student Scientific Research Prize – Euréka (DOST HCMC), 2025.</span>
+                            </li>
+                            <li class="research-paper-item">
+                                <a href="https://fas.hcmut.edu.vn/isas2023" target="_blank" rel="noopener">Evaluation of Label Noise, Feature Extraction and Classification of Electroencephalogram Signals based on Non-linear Analysis Techniques and Machine Learning Algorithms</a>
+                                <span class="paper-venue">International Symposium of Applied Science (ISAS), 2023.</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -86,18 +113,44 @@
 
             <div class="research-project">
                 <div class="research-project-img">
-                    <img src="Images/Bone_remodelling.png" alt="Bone Remodeling Simulation" loading="lazy" decoding="async">
+                    <div class="research-img-wrapper">
+                        <img src="Images/Bone_remodelling.png" alt="Proximal Femur Boundary & Loading" loading="lazy" decoding="async">
+                        <div class="research-img-caption">Proximal femur boundary conditions &amp; joint loading</div>
+                    </div>
+                    <div class="research-img-wrapper">
+                        <img src="Images/Femur_remodeling.png" alt="Femur Bone Remodeling TRPIM Simulation" loading="lazy" decoding="async">
+                        <div class="research-img-caption">Trabecular architecture &amp; density remodeling (eNNTRPIM)</div>
+                    </div>
                 </div>
                 <div class="research-project-content">
+                    <div class="pub-badge-row">
+                        <span class="pub-badge pub-badge--journal"><i class="fa-solid fa-bone"></i> Bone Remodeling</span>
+                        <span class="pub-badge pub-badge--conference"><i class="fa-solid fa-calculator"></i> Meshfree Methods</span>
+                        <span class="pub-badge pub-badge--metric"><i class="fa-solid fa-chart-line"></i> Biomechanics</span>
+                        <span class="pub-badge pub-badge--topic">TRPIM / RPIM</span>
+                    </div>
                     <h3 class="research-project-title">Bone Remodelling Algorithms using Numerical Meshless Method</h3>
                     <div class="research-project-desc">
                         <p>
-                            Bone remodeling is a complex biological process that can be modeled using advanced numerical methods. In this project, we investigate the development of high-fidelity biomechanical simulations using the meshless method instead of finite element method (FEM) approach. It allows for more accurate predictions of bone density changes under various loading conditions, which have important use cases for orthopedic implant design and biomechanics.
+                            Bone remodeling dynamically adapts internal bone density to mechanical strain energy density (SED). We develop advanced meshfree methods that eliminate mesh distortion inherent in standard FEM, yielding high-accuracy predictions of proximal femur density evolution for orthopedic implant design and bone disease assessment.
                         </p>
                         <ul class="research-bullet-list">
-                            <li><b>Radial Point Interpolation Method (RPIM):</b> The numerical approximation employs a combination of radial basis functions (RBFs) and conventional polynomial basis functions (PBFs).</li>
-                            <li><b>Moving Kriging Interpolation Method (MKIM):</b> The local approximation is defined as the sum of a deterministic polynomial part and a systematic deviation represented by a correlation function.</li>
-                            <li><b>Tchebychev-Radial Point Interpolation Method (TRPIM):</b> The radial basis functions (RBFs) are combined with the Tchebychev polynomial basis functions (TPBFs) instead of conventional polynomial functions to interpolate for the physical field in the problem domain.</li>
+                            <li><b>Tchebychev-RPIM (TRPIM):</b> Merges radial basis functions with orthogonal Tchebychev polynomials to prevent matrix ill-conditioning.</li>
+                            <li><b>Adaptive Biomechanical Remodeling:</b> Predicts cellular bone adaptation and trabecular architecture evolution under daily physiological contact loads.</li>
+                        </ul>
+                    </div>
+
+                    <div class="research-related-papers">
+                        <h4 class="research-related-title"><i class="fa-solid fa-file-lines"></i> Related Publications &amp; Projects</h4>
+                        <ul class="research-paper-list">
+                            <li class="research-paper-item">
+                                <a href="https://doi.org/10.1016/j.enganabound.2026.106922" target="_blank" rel="noopener">An efficient enhanced Tchebychev–radial point interpolation method for bone remodeling analysis</a>
+                                <span class="paper-venue">Journal of Engineering Analysis with Boundary Elements (Elsevier, Q1), 2026.</span>
+                            </li>
+                            <li class="research-paper-item">
+                                <a href="https://bme.hcmiu.edu.vn/bme11/" target="_blank" rel="noopener">Predicting Orthotropic Bone Remodeling: A Performance Comparison of the Finite Element Method and the Tchebychev-Radial Point Interpolation Method</a>
+                                <span class="paper-venue">11th Int. Conference on the Development of Biomedical Engineering in Vietnam (BME11), 2026.</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -105,20 +158,56 @@
 
             <div class="research-project">
                 <div class="research-project-img">
-                    <img src="Images/Hyperelastic_Model.png" alt="Hyperelastic Model" loading="lazy" decoding="async">
-                    <img src="Images/Skin.png" alt="Skin Modeling" loading="lazy" decoding="async">
+                    <div class="research-img-wrapper">
+                        <img src="Images/Hyperelastic_Model.png" alt="Hyperelastic Constitutive Model Fitting" loading="lazy" decoding="async">
+                        <div class="research-img-caption">Constitutive hyperelastic stress-strain response</div>
+                    </div>
+                    <div class="research-img-wrapper">
+                        <img src="Images/Skin.png" alt="Multilayer Skin Deformation" loading="lazy" decoding="async">
+                        <div class="research-img-caption">Multilayer dermis large deformation modeling</div>
+                    </div>
+                    <div class="research-img-wrapper">
+                        <img src="Images/Cook_displacement.png" alt="3D Hyperelastic Displacement DEM-TRPIM" loading="lazy" decoding="async">
+                        <div class="research-img-caption">3D large deformation field (DEM-TRPIM)</div>
+                    </div>
                 </div>
                 <div class="research-project-content">
+                    <div class="pub-badge-row">
+                        <span class="pub-badge pub-badge--journal"><i class="fa-solid fa-shapes"></i> Soft Tissue Mechanics</span>
+                        <span class="pub-badge pub-badge--conference"><i class="fa-solid fa-cube"></i> 3D Hyperelasticity</span>
+                        <span class="pub-badge pub-badge--metric"><i class="fa-solid fa-microchip"></i> SciML / KAN</span>
+                        <span class="pub-badge pub-badge--topic">Deep Energy Method</span>
+                    </div>
                     <h3 class="research-project-title">Hyperelastics Mathematical Model Predict Nonlinear Behavior of Human Skin</h3>
                     <div class="research-project-desc">
                         <p>
-                            Human skin exhibits complex mechanical behavior characterized by anisotropy, viscoelasticity, and nonlinearity. These properties are influenced by a variety of factors, including internal structural composition, aging, sustained mechanical loading, and environmental conditions. To accurately capture this nonlinear response, hyperelastic models, formulated through strain energy density functions and displacement fields are commonly employed. Our project investigates the mechanical properties and behavior of hyperelastics mathematical models to verify their practical applicability as a substitute for human skin in medical robotics or artificial human skin.
+                            Human skin and soft tissues exhibit strong nonlinearity, anisotropy, and incompressibility under large deformations. We investigate anisotropic constitutive hyperelastic models (Mooney-Rivlin, Ogden, Gasser-Ogden-Holzapfel) and develop Scientific Machine Learning (SciML) frameworks—integrating Kolmogorov-Arnold Networks (KAN) into Deep Energy Methods (DEM)—for surgical robotics and tissue mechanics.
                         </p>
                         <ul class="research-bullet-list">
-                            <li><b>Mooney-Rivlin:</b> Using a strain energy density function, which is a linear combination of two algebraic invariants of the left Cauchy-Green deformation tensor.</li>
-                            <li><b>Ogden:</b> Considering as compressible and incompressible materials, and the volume part of the Ogden model is neglected for an incompressible material.</li>
-                            <li><b>Neo-Hookean:</b> Strain energy function is defined for the large deformation of the material, and it depends on the right Cauchy-Green deformation tensor as well as Ogden strain energy function.</li>
-                            <li><b>Gasser-Ogden-Holzapfel:</b> Utilized to model the fibers of skin with two ideal directions.</li>
+                            <li><b>Constitutive Formulations:</b> Multilayer dermis formulations capturing collagen fiber orientations and stretch limits under mechanical stress.</li>
+                            <li><b>SciML &amp; Deep Energy (DEM):</b> Finite element-integrated fractional KAN networks solving variational large-deformation hyperelasticity without mesh distortion.</li>
+                        </ul>
+                    </div>
+
+                    <div class="research-related-papers">
+                        <h4 class="research-related-title"><i class="fa-solid fa-file-lines"></i> Related Publications &amp; Projects</h4>
+                        <ul class="research-paper-list">
+                            <li class="research-paper-item">
+                                <a href="publications.html">A novel finite element-integrated deep energy method via KAN-informed neural networks and fractional function for 3D hyperelasticity</a>
+                                <span class="paper-venue">Journal of Computers &amp; Structures (Elsevier), 2026 (In submission).</span>
+                            </li>
+                            <li class="research-paper-item">
+                                <a href="https://vjs.ac.vn/vjmech/article/view/23957" target="_blank" rel="noopener">A moving Kriging meshfree approach for analyzing large deformation of a hyperelastic model</a>
+                                <span class="paper-venue">Vietnam Journal of Mechanics (DOAJ), 2026.</span>
+                            </li>
+                            <li class="research-paper-item">
+                                <a href="https://www.bme.nchu.edu.tw/iset/" target="_blank" rel="noopener">Nonlinear Simulation of Human Skin under Large Deformations with the Ogden Hyperelastic Model Using a Meshless Method</a>
+                                <span class="paper-venue">Int. Symposium on Engineering and Technology (ISET 2025), Taiwan, 2025.</span>
+                            </li>
+                            <li class="research-paper-item">
+                                <a href="Documents/Khanh_CP%20Final_V3.pdf" target="_blank" rel="noopener">Investigation and Simulation of The Mechanical Behavior of Human Skin Layers with The Hyperelastic Model using The Finite Element Method</a>
+                                <span class="paper-venue">Undergraduate Capstone Thesis, HCMUT - VNU-HCM, 2025.</span>
+                            </li>
                         </ul>
                     </div>
                 </div>

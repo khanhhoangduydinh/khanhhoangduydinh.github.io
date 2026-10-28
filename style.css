@@ -1209,7 +1209,8 @@ p.caption + p.caption {
     gap: 12px;
 }
 
-.research-project-img img {
+.research-project-img img,
+.research-img-wrapper img {
     width: 100%;
     border-radius: 10px;
     border: 1px solid var(--border);
@@ -1218,7 +1219,8 @@ p.caption + p.caption {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.research-project-img img:hover {
+.research-project-img img:hover,
+.research-img-wrapper img:hover {
     transform: scale(1.02);
     box-shadow: var(--shadow-md);
 }
@@ -1279,6 +1281,80 @@ p.caption + p.caption {
 
 .research-bullet-list li b {
     color: var(--text);
+}
+
+.research-img-caption {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    font-style: italic;
+    line-height: 1.35;
+}
+
+.research-related-papers {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+}
+
+.research-related-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.research-paper-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.research-paper-item {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--text-muted);
+    padding-left: 16px;
+    position: relative;
+}
+
+.research-paper-item::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.research-paper-item a {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.research-paper-item a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.research-paper-item .paper-venue {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    display: block;
+    margin-top: 1px;
 }
 
 /* =========================================
