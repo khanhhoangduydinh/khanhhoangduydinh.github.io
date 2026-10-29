@@ -333,6 +333,26 @@
         }));
     }
 
+    /* ---------- 10. Last updated date formatter ---------- */
+    function initLastUpdated() {
+        const els = $$('.last-updated-text');
+        if (!els.length) return;
+        try {
+            const raw = document.lastModified;
+            if (raw) {
+                const date = new Date(raw);
+                if (!isNaN(date.getTime()) && date.getFullYear() >= 2026) {
+                    const dd = String(date.getDate()).padStart(2, '0');
+                    const mm = String(date.getMonth() + 1).padStart(2, '0');
+                    const yyyy = date.getFullYear();
+                    els.forEach((el) => { el.textContent = `${dd}/${mm}/${yyyy}`; });
+                }
+            }
+        } catch (error) {
+            console.warn('Could not format lastModified date:', error);
+        }
+    }
+
     /* Kept for backward compatibility: open/close Abstract or BibTeX blocks by id */
     window.toggleContent = (id) => {
         const element = document.getElementById(id);
@@ -349,4 +369,5 @@
     initCopyButtons();
     initReveal();
     initNews();
+    initLastUpdated();
 })();
