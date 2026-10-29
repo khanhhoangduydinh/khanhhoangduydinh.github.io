@@ -829,6 +829,60 @@ p.caption + p.caption {
     transform: scale(1.05);
 }
 
+.footer-map-section {
+    margin: 20px auto 16px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--border);
+    max-width: 520px;
+    width: 100%;
+}
+
+.footer-map-heading {
+    font-size: 0.80rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.footer-map-heading i {
+    color: var(--accent);
+}
+
+.footer-map-card {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px;
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer-map-placeholder {
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    text-align: center;
+    padding: 12px;
+}
+
+.footer-map-placeholder i {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 6px;
+    color: var(--accent);
+    opacity: 0.7;
+}
+
 .back-to-top {
     position: fixed;
     right: 24px;

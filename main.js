@@ -353,6 +353,48 @@
         }
     }
 
+    /* ---------- 11. Google Analytics 4 (GA4) ---------- */
+    // Paste your Google Analytics Measurement ID here (e.g. 'G-XXXXXXXXXX')
+    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+
+    function initGoogleAnalytics() {
+        if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
+        try {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { window.dataLayer.push(arguments); }
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+        } catch (error) {
+            console.warn('Google Analytics failed to initialize:', error);
+        }
+    }
+
+    /* ---------- 12. ClustrMaps / Academic Visitor Map Widget ---------- */
+    // Paste your ClustrMaps token here (from clustrmaps.com, e.g. 'YOUR_TOKEN')
+    const CLUSTRMAPS_TOKEN = '';
+
+    function initClustrMaps() {
+        const container = $('#clustrmaps-widget');
+        if (!container) return;
+        if (!CLUSTRMAPS_TOKEN) return;
+        try {
+            container.innerHTML = '';
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.id = 'clustrmaps';
+            script.src = `//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=${CLUSTRMAPS_TOKEN}&co=2563eb&cmo=10b981&cmn=ef4444`;
+            container.appendChild(script);
+        } catch (error) {
+            console.warn('ClustrMaps failed to load:', error);
+        }
+    }
+
     /* Kept for backward compatibility: open/close Abstract or BibTeX blocks by id */
     window.toggleContent = (id) => {
         const element = document.getElementById(id);
@@ -370,4 +412,6 @@
     initReveal();
     initNews();
     initLastUpdated();
+    initGoogleAnalytics();
+    initClustrMaps();
 })();
